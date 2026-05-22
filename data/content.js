@@ -141,7 +141,7 @@ export const translations = {
       garments: {
         eyebrow: "Garment System / MMXXVI",
         title:
-          "VANTRUFREE Garment System: первая капсула, которая ощущается как label release, а не как обычный merch.",
+          "VANTRUFREE Garment System: одежда, которая продолжает визуальный язык бренда и ощущается как часть настоящего underground label.",
         copy:
           "Здесь важна не просто футболка. Важны знак, тяжесть washed black базы, distressed ivory печать и то ощущение, когда вещь выглядит как часть underground collective, а не как случайный принт на ткани.",
         button: "Открыть garment selection",
@@ -760,7 +760,7 @@ export const translations = {
       garments: {
         eyebrow: "Garment System / MMXXVI",
         title:
-          "VANTRUFREE Garment System: a first capsule that feels like a label release, not generic merch.",
+          "VANTRUFREE Garment System: clothing that extends the brand’s visual language and feels like part of a real underground label.",
         copy:
           "This is not just a t-shirt. It is about the mark, the weight of the washed black base, the distressed ivory print and the feeling that the piece belongs to a real underground collective rather than to random branded merch.",
         button: "Open Garment Selection",
