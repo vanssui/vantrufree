@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="VANTRUFREE создает премиальный AI-визуал, веб-системы, интерфейсы поверх Google Sheets и кинематографичный контент для брендов, ресторанов и цифровых продуктов."
+      data-meta-description
+    />
+    <title data-page-title>VANTRUFREE | Визуальные системы, AI-контент и веб-интерфейсы</title>
+    <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+    <link rel="icon" href="./favicon.ico?v=3" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png?v=3" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png?v=3" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/layout.css" />
+    <link rel="stylesheet" href="./styles/sections.css" />
+  </head>
+  <body class="is-preloading" data-scene="hero" data-read-mode="full">
+    <div class="site-preloader" data-preloader aria-hidden="true">
+      <div class="site-preloader__inner">
+        <svg class="site-preloader__mark" viewBox="0 0 1024 1024" fill="none" aria-hidden="true">
+          <path class="site-preloader__path site-preloader__path--one" pathLength="1" d="M 555.0 440.0 L 738.0 441.0 L 752.0 446.0 L 761.0 454.0 L 769.0 474.0 L 821.0 408.0 L 629.0 407.0 L 686.0 291.0 L 820.0 289.0 L 843.0 301.0 L 859.0 327.0 L 886.0 286.0 L 927.0 244.0 L 583.0 243.0 L 614.0 271.0 L 621.0 290.0 Z" />
+          <path class="site-preloader__path site-preloader__path--two" pathLength="1" d="M 96.0 242.0 L 151.0 280.0 L 182.0 314.0 L 464.0 810.0 L 497.0 877.0 L 537.0 783.0 L 681.0 495.0 L 683.0 464.0 L 622.0 464.0 L 624.0 490.0 L 508.0 723.0 L 507.0 761.0 L 240.0 278.0 L 242.0 262.0 L 265.0 242.0 Z" />
+          <path class="site-preloader__path site-preloader__path--three" pathLength="1" d="M 496.0 695.0 L 543.0 606.0 L 546.0 175.0 L 711.0 174.0 L 751.0 212.0 L 835.0 134.0 L 188.0 134.0 L 272.0 212.0 L 312.0 174.0 L 478.0 175.0 L 477.0 609.0 L 412.0 486.0 L 457.0 393.0 L 416.0 283.0 L 421.0 267.0 L 447.0 244.0 L 327.0 244.0 L 376.0 287.0 L 430.0 396.0 L 386.0 494.0 Z" />
+        </svg>
+        <p class="site-preloader__label">VANTRUFREE</p>
+      </div>
+    </div>
+
+    <div class="ambient" aria-hidden="true">
+      <div class="ambient__mesh"></div>
+      <div class="ambient__glow ambient__glow--one"></div>
+      <div class="ambient__glow ambient__glow--two"></div>
+      <div class="ambient__glow ambient__glow--three"></div>
+      <div class="ambient__grid"></div>
+      <div class="ambient__grain"></div>
+    </div>
+
+    <header class="topbar">
+      <div class="shell topbar__inner">
+        <a class="brand" href="#hero" aria-label="VANTRUFREE главная" data-i18n-aria-label="brandHomeAria">
+          <span class="brand__mark" aria-hidden="true">
+            <img src="./assets/images/vtf-logo.svg" alt="" />
+          </span>
+          <span class="brand__text">VANTRUFREE</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="topbar__actions">
+          <div class="read-switch" aria-label="Режим чтения" data-i18n-aria-label="readModeAria">
+            <button class="read-switch__button" type="button" data-read-mode-button="short" data-i18n="readMode.short">
+              Коротко
+            </button>
+            <button class="read-switch__button is-active" type="button" data-read-mode-button="full" data-i18n="readMode.full">
+              Подробно
+            </button>
+          </div>
+
+          <div class="lang-switch" aria-label="Language switcher">
+            <button class="lang-switch__button is-active" type="button" data-lang="ru">RU</button>
+            <button class="lang-switch__button" type="button" data-lang="en">EN</button>
+          </div>
+
+          <nav class="site-nav" id="site-nav" aria-label="Основная навигация" data-i18n-aria-label="navAria">
+            <a href="#about" data-i18n="nav.about">Манифест</a>
+            <a href="#cases" data-i18n="nav.cases">Проекты</a>
+            <a href="#systems" data-i18n="nav.systems">Системы</a>
+            <a href="#video" data-i18n="nav.video">Видео</a>
+            <a href="#campaign" data-i18n="nav.campaign">Campaign</a>
+            <a href="#editorial" data-i18n="nav.editorial">Editorial</a>
+            <a href="#contact" data-i18n="nav.contact">Контакт</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero shell section-observe" id="hero" data-scene="hero">
+        <div class="hero__layout">
+          <div class="hero__content reveal">
+            <p class="eyebrow" data-i18n="hero.eyebrow">Визуальные системы / AI-контент / Веб-интерфейсы</p>
+            <h1 data-i18n="hero.title">
+              VANTRUFREE создает AI-визуал, видео и веб-системы, которые выглядят дорого и работают на бизнес.
+            </h1>
+            <p class="hero__lede" data-i18n="hero.lede">
+              От брендовых роликов и food-визуала до сайтов и web-версий Google-таблиц: я усиливаю упаковку, ускоряю продакшен и перевожу хаотичные процессы в понятный рабочий продукт.
+            </p>
+            <div class="hero__actions">
+              <a class="button button--primary" href="#cases" data-i18n="hero.primaryCta">Смотреть избранные работы</a>
+              <a class="button button--ghost" href="#editorial" data-i18n="hero.editorialCta">Открыть editorial-ветку</a>
+            </div>
+            <div class="proof-strip" data-proof-strip></div>
+          </div>
+
+          <div class="hero__visual reveal reveal-delay">
+            <div class="hero-card">
+              <img
+                src="./assets/images/hero-red.jpeg"
+                alt="Портрет VANTRUFREE с красным кинематографичным светом"
+                data-i18n-alt="hero.imageAlt"
+              />
+              <div class="hero-card__seal" aria-hidden="true">
+                <img src="./assets/images/vtf-logo-transparent.png" alt="" />
+              </div>
+              <div class="hero-card__caption">
+                <span data-i18n="hero.captionPrimary">Авторское присутствие</span>
+                <span data-i18n="hero.captionSecondary">Кинематографично / Премиально / Собрано</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="business shell section-observe" id="business" data-scene="business">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="business.eyebrow">Что я делаю</p>
+          <h2 data-i18n="business.title">Чем я полезен бизнесу и какие задачи закрываю.</h2>
+          <p class="section-intro" data-i18n="business.intro">
+            Я не просто делаю красивую картинку. Я помогаю брендам и заведениям сильнее выглядеть, быстрее запускать контент, понятнее объяснять свою ценность и убирать лишние потери времени и денег.
+          </p>
+        </div>
+        <div class="business-grid" data-business-grid></div>
+        <p class="business-note reveal" data-i18n="business.note">
+          Я не обещаю абстрактные миллионы. Я усиливаю то, что реально влияет на деньги: доверие к бренду, скорость запуска, удобство процессов, качество упаковки и силу первого впечатления.
+        </p>
+      </section>
+
+      <section class="manifest shell section-observe" id="about" data-scene="manifest">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="manifest.eyebrow">Манифест</p>
+          <h2 data-i18n="manifest.title">Не случайный AI-автор. А человек, который мыслит системно.</h2>
+        </div>
+
+        <div class="manifest__grid">
+          <article class="manifest__copy reveal">
+            <p data-i18n="manifest.p1">
+              Моя работа начинается со вкуса, структуры и атмосферы. AI сам по себе не является целью. Это инструмент, который усиливает визуальное мышление, ускоряет итерации и помогает переводить бренд, ресторан, продукт или артиста в более сильную цифровую форму.
+            </p>
+            <div class="role-pills" data-role-pills></div>
+            <p data-i18n="manifest.p2">
+              Мне важны база, дисциплина и ясность. Иногда это приводит к чистому классическому визуалу. Иногда к кинематографичной или editorial-подаче. Но за этим всегда стоит намерение, а не случайность.
+            </p>
+            <div class="signature-block">
+              <span class="signature-block__line"></span>
+              <p data-i18n="manifest.p3">
+                От премиальных фото-концептов и AI-клипов до веб-продуктов и бизнес-инструментов на базе таблиц цель одна: создавать то, что выглядит дорого, ощущается умно и решает реальную задачу.
+              </p>
+            </div>
+          </article>
+
+          <aside class="manifest__portrait reveal reveal-delay">
+            <img
+              src="./assets/images/portrait-warm.png"
+              alt="Портрет VANTRUFREE в теплом свете"
+              data-i18n-alt="manifest.imageAlt"
+            />
+          </aside>
+        </div>
+      </section>
+
+      <section class="disciplines shell section-observe" id="directions" data-scene="directions">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="disciplines.eyebrow">Ключевые направления</p>
+          <h2 data-i18n="disciplines.title">Шесть направлений внутри одной бренд-системы.</h2>
+        </div>
+        <div class="discipline-grid" data-discipline-grid></div>
+      </section>
+
+      <section class="cases shell section-observe" id="cases" data-scene="systems">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="cases.eyebrow">Избранные проекты</p>
+          <h2 data-i18n="cases.title">Проекты, которые сразу показывают, какую задачу они решают.</h2>
+        </div>
+        <div class="cases-grid" data-cases-grid></div>
+      </section>
+
+      <section class="systems shell section-observe" id="systems" data-scene="matrix">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="systems.eyebrow">Sheets To Web</p>
+          <h2 data-i18n="systems.title">Преобразование рабочей Google-таблицы в сфокусированный веб-продукт.</h2>
+        </div>
+
+        <div class="systems__grid">
+          <div class="system-frame reveal">
+            <div class="system-frame__chrome">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="system-frame__screen">
+              <div class="system-frame__code" data-system-code></div>
+              <div class="system-frame__panels" data-system-panels></div>
+            </div>
+          </div>
+
+          <div class="systems__content">
+            <div class="workflow-list reveal" data-workflow-list></div>
+            <div class="principle-list reveal reveal-delay" data-principle-list></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="video shell section-observe" id="video" data-scene="video">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="video.eyebrow">AI Video / Music Visuals</p>
+          <h2 data-i18n="video.title">Клипы, которые ощущаются как цельные работы, а не набор отдельных генераций.</h2>
+        </div>
+        <div class="video-grid" data-video-grid></div>
+      </section>
+
+      <section class="food shell section-observe" id="food" data-scene="food">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="food.eyebrow">Food & Restaurants</p>
+          <h2 data-i18n="food.title">Я понимаю еду как продукт, настроение и триггер аппетита.</h2>
+        </div>
+
+        <div class="food__grid">
+          <article class="food__copy reveal">
+            <p data-i18n="food.copy">
+              Я работал поваром, наблюдал реальные food-production процессы и понимаю, как блюдо должно ощущаться в кадре. Это важно. Сильный ресторанный визуал — это не просто «красивая еда». Это подача, идентичность ингредиентов, атмосфера, стиль бренда и аппетитная реакция зрителя.
+            </p>
+            <div class="pill-list" data-food-pill-list></div>
+            <div class="food__actions">
+              <button class="button button--spotlight" type="button" data-open-food data-i18n="food.cta">
+                Открыть food-подборку
+              </button>
+            </div>
+            <div class="food-reference">
+              <p class="food-reference__eyebrow" data-i18n="food.referenceEyebrow">Fine Dining Study</p>
+              <p class="food-reference__text" data-i18n="food.referenceText">
+                Для этой серии я разобрал меню, атмосферу и визуальный язык проекта Black Fox Rooftop — намеренно обезличенного референса, собранного на базе одного из самых сильных ресторанных брендов Москвы. Это показывает, что я умею входить в чужую айдентику и воспроизводить нужный премиальный тон без случайности.
+              </p>
+            </div>
+          </article>
+
+          <article class="food__card reveal reveal-delay">
+            <p class="food__label" data-i18n="food.whyLabel">Почему это важно</p>
+            <ul data-food-why-list></ul>
+            <div class="food__divider"></div>
+            <h3 class="food__subhead" data-i18n="food.processTitle">Как я бы строил такую работу</h3>
+            <ul class="food__process" data-food-process-list></ul>
+            <div class="food__divider"></div>
+            <h3 class="food__subhead" data-i18n="food.digitalTitle">Digital-персонаж для ресторана</h3>
+            <p data-i18n="food.digitalText">
+              При желании можно создать отдельного AI-персонажа или digital-официанта, который будет рассказывать о новинках, акциях и сезонных запусках вместо случайных разговорных съемок.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="restaurant-economics shell section-observe" id="restaurant-economics" data-scene="food">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="restaurantEconomics.eyebrow">Для ресторанов</p>
+          <h2 data-i18n="restaurantEconomics.title">Почему это выгодно ресторану.</h2>
+        </div>
+
+        <div class="restaurant-economics__intro reveal">
+          <p data-i18n="restaurantEconomics.intro">
+            Классическая food-съёмка часто требует нескольких дней подготовки, команды, света, кухни, согласований и пересъёмок. Для ресторана это не только деньги, но и нагрузка на процессы. AI-driven workflow помогает быстрее собрать premium-визуал, протестировать стиль, обновить меню, подготовить контент для сайта, печати, delivery и соцсетей без постоянной полной продакшн-съёмки.
+          </p>
+          <p class="restaurant-economics__note" data-i18n="restaurantEconomics.note">
+            AI-визуал не всегда заменяет классическую съёмку. Но часто позволяет быстрее протестировать стиль, собрать кампанию и обновить позиции без полной продакшн-команды.
+          </p>
+        </div>
+
+        <div class="restaurant-comparison" data-restaurant-comparison></div>
+
+        <div class="restaurant-faq">
+          <div class="section-heading reveal">
+            <p class="eyebrow" data-i18n="restaurantEconomics.faqEyebrow">FAQ</p>
+            <h2 data-i18n="restaurantEconomics.faqTitle">Вопросы, которые ресторан задаёт до старта.</h2>
+          </div>
+          <div class="restaurant-faq__grid" data-restaurant-faq></div>
+        </div>
+
+        <div class="restaurant-systems-bridge reveal">
+          <div class="restaurant-systems-bridge__copy">
+            <p class="eyebrow" data-i18n="restaurantEconomics.bridgeEyebrow">Не только картинки</p>
+            <h3 data-i18n="restaurantEconomics.bridgeTitle">Food-визуал можно развивать в полноценный digital-слой бренда.</h3>
+            <p data-i18n="restaurantEconomics.bridgeText">
+              Ресторану часто нужен не только красивый визуал. Ему нужен понятный digital-слой: сайт, меню, заявки, брони, статусы, таблицы, склад, задачи и контроль процессов. Поэтому food-визуал можно развивать в полноценную визуальную и операционную систему бренда.
+            </p>
+          </div>
+          <div class="restaurant-systems-bridge__action">
+            <a
+              class="button button--primary"
+              href="https://t.me/wuvan"
+              target="_blank"
+              rel="noreferrer"
+              data-external-open
+              data-i18n="restaurantEconomics.cta"
+            >
+              Обсудить ресторанный проект
+            </a>
+            <p class="restaurant-systems-bridge__note" data-i18n="restaurantEconomics.ctaNote">
+              Можно начать с 5 вопросов: меню, стиль, задачи, форматы и процессы.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="editorial shell section-observe" id="editorial" data-scene="editorial">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="editorial.eyebrow">Portrait / Editorial</p>
+          <h2 data-i18n="editorial.title">Editorial-подборка с настроением, силуэтом и контролем.</h2>
+        </div>
+
+        <div class="editorial__grid">
+          <div class="editorial__feature reveal">
+            <img
+              src="./assets/images/editorial-couple-wide.jpeg"
+              alt="Editorial-портрет VANTRUFREE и его супруги в минималистичной архитектурной среде"
+              data-i18n-alt="editorial.featureAlt"
+            />
+          </div>
+
+          <div class="editorial__content reveal reveal-delay">
+            <p data-i18n="editorial.copy">
+              Это направление может включать fashion, sensual portrait и парные визуалы, но оно всегда должно оставаться curated. Задача не в шоке. Задача в настроении, присутствии, силуэте, фактуре и дорогом editorial-тоне.
+            </p>
+            <div class="editorial__cards" data-editorial-grid></div>
+            <button class="button button--spotlight" type="button" data-open-editorial data-i18n="editorial.button">
+              Открыть curated-подборку
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="campaign shell section-observe" id="campaign" data-scene="editorial">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="campaign.eyebrow">Brand Campaign / Apparel</p>
+          <h2 data-i18n="campaign.title">Vansui: рекламная серия, где одежда подаётся как ритуал и новая броня.</h2>
+        </div>
+
+        <div class="campaign__grid">
+          <div class="campaign__feature reveal">
+            <img
+              src="./assets/images/vansui-hero.jpg"
+              alt="Главный кадр рекламной серии Vansui с самураем и манекеном на поле после боя"
+              data-i18n-alt="campaign.featureAlt"
+            />
+          </div>
+
+          <div class="campaign__content reveal reveal-delay">
+            <p data-i18n="campaign.copy">
+              Эта работа собрана как fashion-история для бренда Vansui. Мне было важно не просто показать вещи, а придать одежде ощущение статуса, ритуала и внутренней дисциплины через японскую эстетику, холодный рассветный свет и более кинематографичную подачу.
+            </p>
+            <div class="editorial__cards" data-campaign-grid></div>
+            <button class="button button--spotlight" type="button" data-open-campaign data-i18n="campaign.button">
+              Открыть серию
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="garments shell section-observe" id="garments" data-scene="campaign">
+        <div class="garments__shell reveal">
+          <div class="garments__intro">
+            <div class="section-heading garments__heading">
+              <p class="eyebrow" data-i18n="garments.eyebrow">Garment System / MMXXVI</p>
+              <h2 data-i18n="garments.title">
+                VANTRUFREE Garment System: первая капсула, которая ощущается как label release, а не как обычный merch.
+              </h2>
+            </div>
+
+            <div class="garments__summary">
+              <p data-i18n="garments.copy">
+                Здесь важна не просто футболка. Важны знак, тяжесть washed black базы, distressed ivory печать и то ощущение, когда вещь выглядит как часть underground collective, а не как случайный принт на ткани.
+              </p>
+              <div class="garments__tags" data-garment-highlights></div>
+              <button class="button button--spotlight" type="button" data-open-garments data-i18n="garments.button">
+                Открыть garment selection
+              </button>
+            </div>
+          </div>
+
+          <div class="garments__layout">
+            <figure class="garments__panel garments__panel--hero reveal">
+              <img
+                src="./assets/images/garment-studio-set.jpeg"
+                alt="VANTRUFREE garment showcase with front and back t-shirt presentation"
+                data-i18n-alt="garments.imageAltHero"
+                loading="lazy"
+              />
+              <figcaption>
+                <span data-i18n="garments.heroLabel">COLLECTION MMXXVI</span>
+                <span data-i18n="garments.heroMeta">washed black / premium screen print / bone white</span>
+              </figcaption>
+            </figure>
+
+            <div class="garments__stack">
+              <figure class="garments__panel garments__panel--stack reveal reveal-delay">
+                <img
+                  src="./assets/images/garment-marble-front-back.png"
+                  alt="VANTRUFREE t-shirt on dark marble styled background"
+                  data-i18n-alt="garments.imageAltMarble"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <span data-i18n="garments.stackLabelOne">Luxury mineral stage</span>
+                </figcaption>
+              </figure>
+
+              <figure class="garments__panel garments__panel--stack reveal reveal-delay">
+                <img
+                  src="./assets/images/garment-clean-flatlay.png"
+                  alt="Flatlay and macro details of VANTRUFREE t-shirt"
+                  data-i18n-alt="garments.imageAltFlatlay"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <span data-i18n="garments.stackLabelTwo">Flatlay / macro / textile detail</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="garments__strip">
+            <figure class="garments__panel garments__panel--strip reveal">
+              <img
+                src="./assets/images/garment-dual-detail.png"
+                alt="Front and back VANTRUFREE t-shirt photographed close up"
+                data-i18n-alt="garments.imageAltDual"
+                loading="lazy"
+              />
+              <figcaption>
+                <span data-i18n="garments.stripLabelOne">Front / back photographed</span>
+              </figcaption>
+            </figure>
+
+            <figure class="garments__panel garments__panel--strip reveal reveal-delay">
+              <img
+                src="./assets/images/garment-emblem-collage.jpeg"
+                alt="Close-up emblem collage of VANTRUFREE t-shirt print"
+                data-i18n-alt="garments.imageAltEmblem"
+                loading="lazy"
+              />
+              <figcaption>
+                <span data-i18n="garments.stripLabelTwo">Emblem / texture / print wear</span>
+              </figcaption>
+            </figure>
+
+            <figure class="garments__panel garments__panel--strip reveal reveal-delay">
+              <img
+                src="./assets/images/garment-spec-board.png"
+                alt="Specification board for VANTRUFREE garment print and materials"
+                data-i18n-alt="garments.imageAltSpec"
+                loading="lazy"
+              />
+              <figcaption>
+                <span data-i18n="garments.stripLabelThree">Specification / material direction</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact shell section-observe" id="contact" data-scene="contact">
+        <div class="contact-card reveal">
+          <p class="eyebrow" data-i18n="contact.eyebrow">Контакт</p>
+          <h2 data-i18n="contact.title">Давай соберем визуальную систему, у которой действительно есть голос.</h2>
+          <p data-i18n="contact.text">
+            Лучше всего я подхожу ресторанам, брендам, музыкальным артистам, фаундерам и командам, которым нужен более сильный визуальный язык, более осмысленное портфолио, премиальный лендинг или отдельный веб-слой поверх хаотичных операционных данных.
+          </p>
+          <div class="contact-links" data-contact-links></div>
+          <div class="contact-card__actions">
+            <a class="button button--primary" href="https://t.me/wuvan" target="_blank" rel="noreferrer" data-external-open data-i18n="contact.primaryCta">Написать в Telegram</a>
+            <a class="button button--ghost" href="#video" data-i18n="contact.secondaryCta">Посмотреть видео-работы</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer shell">
+      <p>VANTRUFREE</p>
+      <p data-i18n="footer.line">AI-визуал, премиальные веб-интерфейсы и авторская атмосфера бренда.</p>
+    </footer>
+
+    <dialog class="editorial-modal" data-editorial-modal>
+      <div class="editorial-modal__inner">
+        <button class="editorial-modal__close" type="button" aria-label="Закрыть editorial-модалку" data-i18n-aria-label="modal.closeAria" data-close-editorial>
+          ×
+        </button>
+        <div class="editorial-modal__copy">
+          <p class="eyebrow" data-i18n="modal.eyebrow">Editorial Selection</p>
+          <h2 data-i18n="modal.title">Только отобранные изображения.</h2>
+          <p data-i18n="modal.text">
+            Более чувственное или приватное направление можно вынести в отдельную ветку, под пароль или в закрытый клиентский просмотр. Для публичного портфолио подборка остается сдержанной и премиальной.
+          </p>
+        </div>
+        <div class="editorial-modal__gallery">
+          <img
+            src="./assets/images/editorial-couple-portrait.jpeg"
+            alt="Editorial-портрет пары в монохромном стиле"
+            data-i18n-alt="modal.imageAlt1"
+          />
+          <img
+            src="./assets/images/portrait-standing.jpeg"
+            alt="Стоячий монохромный портрет VANTRUFREE"
+            data-i18n-alt="modal.imageAlt2"
+          />
+          <img
+            src="./assets/images/editorial-burgundy-sofa.png"
+            alt="Портрет девушки в бордовом свитере"
+            data-i18n-alt="modal.imageAlt3"
+          />
+          <img
+            src="./assets/images/editorial-silver-1.png"
+            alt="Портрет девушки в серебристом вечернем платье"
+            data-i18n-alt="modal.imageAlt4"
+          />
+          <img
+            src="./assets/images/editorial-brown-window.png"
+            alt="Портрет девушки у окна"
+            data-i18n-alt="modal.imageAlt5"
+          />
+          <img
+            src="./assets/images/portrait-half.jpeg"
+            alt="Поясной монохромный портрет VANTRUFREE"
+            data-i18n-alt="modal.imageAlt6"
+          />
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="editorial-modal food-modal" data-food-modal>
+      <div class="editorial-modal__inner">
+        <button class="editorial-modal__close" type="button" aria-label="Закрыть food-модалку" data-i18n-aria-label="foodModal.closeAria" data-close-food>
+          ×
+        </button>
+        <div class="editorial-modal__copy">
+          <p class="eyebrow" data-i18n="foodModal.eyebrow">Food Selection</p>
+          <h2 data-i18n="foodModal.title">Ресторанный food-визуал с премиальной подачей.</h2>
+          <p data-i18n="foodModal.text">
+            Эта подборка показывает, как я могу разобрать айдентику сильного ресторанного бренда, понять настроение меню и собрать собственный визуал в том же уровне подачи, света и гастрономического тона.
+          </p>
+        </div>
+        <div class="food-modal__gallery" data-food-gallery></div>
+      </div>
+    </dialog>
+
+    <dialog class="editorial-modal food-modal" data-campaign-modal>
+      <div class="editorial-modal__inner">
+        <button class="editorial-modal__close" type="button" aria-label="Закрыть campaign-модалку" data-i18n-aria-label="campaignModal.closeAria" data-close-campaign>
+          ×
+        </button>
+        <div class="editorial-modal__copy">
+          <p class="eyebrow" data-i18n="campaignModal.eyebrow">Campaign Selection</p>
+          <h2 data-i18n="campaignModal.title">Vansui: after the battle, only essentials remain.</h2>
+          <p data-i18n="campaignModal.text">
+            Здесь серия показана как цельная рекламная история: главный кадр, предметные фрагменты и финальный образ с пустым манекеном и оставленными доспехами. Мне было важно, чтобы эта работа продавала не только одежду, а атмосферу, статус и философию бренда.
+          </p>
+        </div>
+        <div class="food-modal__gallery" data-campaign-gallery></div>
+      </div>
+    </dialog>
+
+    <dialog class="editorial-modal food-modal garment-modal" data-garment-modal>
+      <div class="editorial-modal__inner">
+        <button class="editorial-modal__close" type="button" aria-label="Закрыть garment-модалку" data-i18n-aria-label="garmentModal.closeAria" data-close-garment>
+          ×
+        </button>
+        <div class="editorial-modal__copy">
+          <p class="eyebrow" data-i18n="garmentModal.eyebrow">Garment Selection</p>
+          <h2 data-i18n="garmentModal.title">VANTRUFREE garment system как физический объект бренда.</h2>
+          <p data-i18n="garmentModal.text">
+            Здесь футболка показана не как обычный product shot, а как часть visual identity system: washed black база, distressed ivory печать, крупный back statement и контролируемая подача, которая ощущается как release дорогого underground label.
+          </p>
+        </div>
+        <div class="food-modal__gallery garment-modal__gallery" data-garment-gallery></div>
+      </div>
+    </dialog>
+
+    <script type="module" src="./scripts/main.js"></script>
+  </body>
+</html>
