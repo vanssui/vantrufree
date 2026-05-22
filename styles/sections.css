@@ -1181,6 +1181,21 @@ body[data-read-mode="short"] .restaurant-faq__card p {
     padding-left: 0;
   }
 
+  .garments__intro,
+  .garments__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .garments__panel img {
+    display: block;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+
+  .garments__panel--hero img {
+    aspect-ratio: 16 / 8;
+  }
+
   .garments__stack {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1403,13 +1418,28 @@ body[data-read-mode="short"] .restaurant-faq__card p {
     margin-top: 18px;
   }
 
+  .garments__panel--hero {
+    display: none;
+  }
+
   .garments__stack {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
+  }
+
+  .garments__strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
+    overscroll-behavior-x: auto;
   }
 
   .garments__panel {
     border-radius: 20px;
+  }
+
+  .garments__panel img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
   }
 
   .garments__panel figcaption {
@@ -1478,13 +1508,8 @@ body[data-read-mode="short"] .restaurant-faq__card p {
   }
 
   .garments__strip {
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(240px, 72vw);
-    grid-template-columns: none;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
     padding-bottom: 4px;
-    margin-inline: -2px;
+    margin-inline: 0;
   }
 
   .garments__strip::-webkit-scrollbar {
@@ -1503,8 +1528,15 @@ body[data-read-mode="short"] .restaurant-faq__card p {
 }
 
 @media (max-width: 420px) {
+  .garments__stack,
   .garments__strip {
-    grid-auto-columns: minmax(220px, 78vw);
+    gap: 12px;
+  }
+
+  .garments__panel figcaption {
+    min-height: 72px;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
   }
 
   .contact-links {
