@@ -20,6 +20,8 @@
 body[data-read-mode="short"] .hero__lede,
 body[data-read-mode="short"] .section-intro,
 body[data-read-mode="short"] .business-card p,
+body[data-read-mode="short"] .automation-step p,
+body[data-read-mode="short"] .automation-case p,
 body[data-read-mode="short"] .manifest__copy > p:first-of-type,
 body[data-read-mode="short"] .food__copy > p:first-of-type,
 body[data-read-mode="short"] .food-reference__text,
@@ -45,6 +47,7 @@ body[data-read-mode="short"] .case-card p {
 }
 
 body[data-read-mode="short"] .business-note,
+body[data-read-mode="short"] .automation-note h3,
 body[data-read-mode="short"] .signature-block,
 body[data-read-mode="short"] .manifest__copy > p:nth-of-type(2),
 body[data-read-mode="short"] .case-card__impact,
@@ -102,8 +105,138 @@ body[data-read-mode="short"] .restaurant-faq__card p {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
 }
 
+.automation__grid {
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+  align-items: stretch;
+}
+
+.automation-map,
+.automation-case,
+.automation-note,
+.lead-form {
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.018));
+  box-shadow: var(--shadow);
+}
+
+.automation-map {
+  padding: clamp(24px, 4vw, 34px);
+}
+
+.automation-map__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.automation-map__label {
+  margin: 0;
+  color: var(--text);
+}
+
+.automation-flow {
+  display: grid;
+  gap: 14px;
+}
+
+.automation-step {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.034);
+  border: 1px solid rgba(255, 255, 255, 0.065);
+}
+
+.automation-step__number {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(195, 164, 109, 0.11);
+  color: var(--accent-gold);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+}
+
+.automation-step h3,
+.automation-case h3,
+.automation-note h3,
+.lead-form h2 {
+  margin: 0;
+  font-size: 1.22rem;
+  line-height: 1.22;
+}
+
+.automation-step p,
+.automation-case p,
+.automation-note p {
+  margin: 9px 0 0;
+  color: var(--muted-strong);
+}
+
+.automation-cases {
+  display: grid;
+  gap: 18px;
+}
+
+.automation-case {
+  padding: 24px;
+}
+
+.automation-case__meta {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.automation-case__points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.automation-case__points span {
+  padding: 8px 11px;
+  border-radius: 999px;
+  border: 1px solid rgba(195, 164, 109, 0.16);
+  background: rgba(255, 255, 255, 0.045);
+  color: var(--muted-strong);
+  font-size: 0.82rem;
+}
+
+.automation-note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 24px;
+  padding: clamp(22px, 3vw, 30px);
+}
+
+.automation-note .eyebrow {
+  margin-bottom: 10px;
+}
+
 .hero-card__seal.glass3d,
 .proof-pill.glass3d,
+.automation-map.glass3d,
+.automation-case.glass3d,
+.automation-note.glass3d,
 .business-card.glass3d,
 .discipline-card.glass3d,
 .case-card.glass3d,
@@ -119,7 +252,8 @@ body[data-read-mode="short"] .restaurant-faq__card p {
 .campaign__content.glass3d,
 .editorial__content.glass3d,
 .editorial-mini.glass3d,
-.contact-card.glass3d {
+.contact-card.glass3d,
+.lead-form.glass3d {
   --filter-glass3d: blur(24px) brightness(0.88) saturate(2);
   --color-glass3d: hsl(0 0% 100% / 0.045);
 
@@ -983,6 +1117,13 @@ body[data-read-mode="short"] .restaurant-faq__card p {
   font-size: 1rem;
 }
 
+.contact__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.94fr) minmax(360px, 0.76fr);
+  gap: 24px;
+  align-items: start;
+}
+
 .contact-card {
   padding: clamp(28px, 5vw, 48px);
   margin-top: 18px;
@@ -992,6 +1133,95 @@ body[data-read-mode="short"] .restaurant-faq__card p {
     linear-gradient(135deg, rgba(200, 63, 56, 0.08), transparent 30%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
   box-shadow: var(--shadow);
+}
+
+.lead-form {
+  display: grid;
+  gap: 16px;
+  padding: clamp(24px, 4vw, 34px);
+  margin-top: 18px;
+  border-radius: 32px;
+}
+
+.lead-form h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 2.6vw, 2.35rem);
+}
+
+.lead-field {
+  display: grid;
+  gap: 8px;
+}
+
+.lead-field span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.lead-field input,
+.lead-field select,
+.lead-field textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  background: rgba(5, 5, 5, 0.34);
+  color: var(--text);
+  outline: none;
+  padding: 13px 15px;
+  transition: border-color 0.24s ease, background-color 0.24s ease, box-shadow 0.24s ease;
+}
+
+.lead-field select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(245, 240, 232, 0.72) 50%),
+    linear-gradient(135deg, rgba(245, 240, 232, 0.72) 50%, transparent 50%);
+  background-position:
+    calc(100% - 20px) 50%,
+    calc(100% - 14px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.lead-field textarea {
+  min-height: 134px;
+  resize: vertical;
+}
+
+.lead-field input::placeholder,
+.lead-field textarea::placeholder {
+  color: rgba(245, 240, 232, 0.38);
+}
+
+.lead-field input:focus,
+.lead-field select:focus,
+.lead-field textarea:focus {
+  border-color: rgba(220, 191, 139, 0.42);
+  background-color: rgba(8, 8, 8, 0.48);
+  box-shadow: 0 0 0 3px rgba(195, 164, 109, 0.1);
+}
+
+.lead-form__submit:disabled {
+  opacity: 0.62;
+  cursor: wait;
+  transform: none;
+}
+
+.lead-form__status {
+  min-height: 44px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.lead-form__status[data-state="success"] {
+  color: rgba(195, 224, 176, 0.92);
+}
+
+.lead-form__status[data-state="error"] {
+  color: rgba(255, 177, 159, 0.94);
 }
 
 .contact-card__actions {
@@ -1006,6 +1236,10 @@ body[data-read-mode="short"] .restaurant-faq__card p {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
   margin-top: 28px;
+}
+
+.contact__grid .contact-links {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .contact-link {
@@ -1240,6 +1474,8 @@ body[data-read-mode="short"] .restaurant-faq__card p {
 
   .system-frame__panels,
   .proof-strip,
+  .automation__grid,
+  .contact__grid,
   .contact-links,
   .restaurant-faq__grid,
   .editorial-modal__gallery,
@@ -1285,17 +1521,22 @@ body[data-read-mode="short"] .restaurant-faq__card p {
   }
 
   .manifest__copy,
+  .automation-map,
+  .automation-case,
+  .automation-note,
   .food__copy,
   .restaurant-economics__intro,
   .garments__shell,
   .campaign__content,
   .editorial__content,
   .food__card,
-  .contact-card {
+  .contact-card,
+  .lead-form {
     padding: 24px;
   }
 
   .business-card,
+  .automation-step,
   .discipline-card,
   .case-card,
   .workflow-card,
@@ -1313,6 +1554,8 @@ body[data-read-mode="short"] .restaurant-faq__card p {
   }
 
   .business-card h3,
+  .automation-step h3,
+  .automation-case h3,
   .discipline-card h3,
   .case-card h3,
   .workflow-card h3,
@@ -1359,6 +1602,11 @@ body[data-read-mode="short"] .restaurant-faq__card p {
   .contact-card__actions {
     flex-direction: column;
   }
+
+  .automation-note {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 560px) {
@@ -1369,6 +1617,9 @@ body[data-read-mode="short"] .restaurant-faq__card p {
   }
 
   .hero__lede,
+  .automation-step p,
+  .automation-case p,
+  .automation-note p,
   .manifest__copy p,
   .food__copy p,
   .contact-card p,
@@ -1398,11 +1649,30 @@ body[data-read-mode="short"] .restaurant-faq__card p {
     padding: 14px 15px;
   }
 
+  .automation-map__header {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .automation-step {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .automation-step__number {
+    width: 38px;
+    height: 38px;
+  }
+
   .hero__visual {
     min-height: 380px;
   }
 
   .manifest__copy,
+  .automation-map,
+  .automation-case,
+  .automation-note,
   .food__copy,
   .restaurant-economics__intro,
   .garments__shell,
@@ -1410,11 +1680,13 @@ body[data-read-mode="short"] .restaurant-faq__card p {
   .editorial__content,
   .food__card,
   .contact-card,
+  .lead-form,
   .restaurant-systems-bridge {
     padding: 18px;
   }
 
   .business-card,
+  .automation-step,
   .discipline-card,
   .case-card,
   .workflow-card,
@@ -1434,6 +1706,7 @@ body[data-read-mode="short"] .restaurant-faq__card p {
 
   .case-card__stack,
   .case-card__highlights,
+  .automation-case__points,
   .pill-list,
   .role-pills {
     gap: 8px;
@@ -1441,6 +1714,7 @@ body[data-read-mode="short"] .restaurant-faq__card p {
 
   .case-card__stack span,
   .case-card__highlights span,
+  .automation-case__points span,
   .pill-list span,
   .role-pill {
     padding: 7px 10px;

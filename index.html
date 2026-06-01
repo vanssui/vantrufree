@@ -18,9 +18,9 @@
     <meta name="apple-mobile-web-app-title" content="VANTRUFREE" />
     <meta name="application-name" content="VANTRUFREE" />
     <meta name="theme-color" content="#090909" />
-    <link rel="stylesheet" href="./styles/base.css" />
-    <link rel="stylesheet" href="./styles/layout.css" />
-    <link rel="stylesheet" href="./styles/sections.css" />
+    <link rel="stylesheet" href="./styles/base.css?v=8" />
+    <link rel="stylesheet" href="./styles/layout.css?v=8" />
+    <link rel="stylesheet" href="./styles/sections.css?v=8" />
   </head>
   <body class="is-preloading" data-scene="hero" data-read-mode="full">
     <div class="site-preloader" data-preloader aria-hidden="true">
@@ -73,12 +73,10 @@
           </div>
 
           <nav class="site-nav" id="site-nav" aria-label="Основная навигация" data-i18n-aria-label="navAria">
-            <a href="#about" data-i18n="nav.about">Манифест</a>
+            <a href="#automation" data-i18n="nav.automation">Автоматизация</a>
             <a href="#cases" data-i18n="nav.cases">Проекты</a>
             <a href="#systems" data-i18n="nav.systems">Системы</a>
             <a href="#video" data-i18n="nav.video">Видео</a>
-            <a href="#campaign" data-i18n="nav.campaign">Кампании</a>
-            <a href="#editorial" data-i18n="nav.editorial">Портреты</a>
             <a href="#contact" data-i18n="nav.contact">Контакт</a>
           </nav>
         </div>
@@ -97,7 +95,7 @@
               От брендовых роликов и ресторанного визуала до сайтов и веб-версий Google-таблиц: я усиливаю упаковку, ускоряю создание контента и перевожу хаотичные процессы в понятный рабочий продукт.
             </p>
             <div class="hero__actions">
-              <a class="button button--primary" href="#cases" data-i18n="hero.primaryCta">Смотреть избранные работы</a>
+              <a class="button button--primary" href="#automation" data-i18n="hero.primaryCta">Разобрать бизнес-системы</a>
               <a class="button button--ghost" href="#editorial" data-i18n="hero.editorialCta">Открыть портретную подборку</a>
             </div>
             <div class="proof-strip" data-proof-strip></div>
@@ -119,6 +117,36 @@
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="automation shell section-observe" id="automation" data-scene="matrix">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="automation.eyebrow">Бизнес-автоматизация</p>
+          <h2 data-i18n="automation.title">Не просто бот, а управляемая система вокруг процесса.</h2>
+          <p class="section-intro" data-i18n="automation.intro">
+            Telegram, VK, Google-таблицы, платежи, закрытые каналы, заявки и веб-панели можно собрать в одну понятную цепочку. Ценность не в кнопке бота, а в том, что бизнес меньше делает руками и быстрее видит состояние процесса.
+          </p>
+        </div>
+
+        <div class="automation__grid">
+          <div class="automation-map glass3d reveal">
+            <div class="automation-map__header">
+              <p class="automation-map__label" data-i18n="automation.flowLabel">Как может работать воронка</p>
+              <span data-i18n="automation.flowTag">канал → бот → доступ → учет</span>
+            </div>
+            <div class="automation-flow" data-automation-flow></div>
+          </div>
+
+          <div class="automation-cases" data-automation-cases></div>
+        </div>
+
+        <div class="automation-note glass3d reveal">
+          <div>
+            <p class="eyebrow" data-i18n="automation.noteEyebrow">Для малого, среднего и крупного бизнеса</p>
+            <h3 data-i18n="automation.noteTitle">Такую логику можно адаптировать под продажи, обучение, клубы, сервисы, заявки, склады и внутренние процессы.</h3>
+          </div>
+          <a class="button button--primary" href="#contact" data-i18n="automation.cta">Оставить заявку на систему</a>
         </div>
       </section>
 
@@ -467,17 +495,55 @@
       </section>
 
       <section class="contact shell section-observe" id="contact" data-scene="contact">
-        <div class="contact-card glass3d reveal">
-          <p class="eyebrow" data-i18n="contact.eyebrow">Контакт</p>
-          <h2 data-i18n="contact.title">Давай соберем визуальную систему, у которой действительно есть голос.</h2>
-          <p data-i18n="contact.text">
-            Лучше всего я подхожу ресторанам, брендам, музыкальным артистам, основателям и командам, которым нужен более сильный визуальный язык, более осмысленное портфолио, премиальная посадочная страница или отдельный веб-слой поверх хаотичных операционных данных.
-          </p>
-          <div class="contact-links" data-contact-links></div>
-          <div class="contact-card__actions">
-            <a class="button button--primary" href="https://t.me/wuvan" target="_blank" rel="noreferrer" data-external-open data-i18n="contact.primaryCta">Написать в Telegram</a>
-            <a class="button button--ghost" href="#video" data-i18n="contact.secondaryCta">Посмотреть видео-работы</a>
+        <div class="contact__grid">
+          <div class="contact-card glass3d reveal">
+            <p class="eyebrow" data-i18n="contact.eyebrow">Контакт</p>
+            <h2 data-i18n="contact.title">Давай соберем визуальную систему, у которой действительно есть голос.</h2>
+            <p data-i18n="contact.text">
+              Лучше всего я подхожу ресторанам, брендам, музыкальным артистам, основателям и командам, которым нужен более сильный визуальный язык, более осмысленное портфолио, премиальная посадочная страница или отдельный веб-слой поверх хаотичных операционных данных.
+            </p>
+            <div class="contact-links" data-contact-links></div>
+            <div class="contact-card__actions">
+              <a class="button button--primary" href="https://t.me/wuvan" target="_blank" rel="noreferrer" data-external-open data-i18n="contact.primaryCta">Написать в Telegram</a>
+              <a class="button button--ghost" href="#video" data-i18n="contact.secondaryCta">Посмотреть видео-работы</a>
+            </div>
           </div>
+
+          <form class="lead-form glass3d reveal reveal-delay" data-lead-form data-lead-endpoint="" aria-label="Заявка на проект" data-i18n-aria-label="lead.formAria">
+            <p class="eyebrow" data-i18n="lead.eyebrow">Заявка</p>
+            <h2 data-i18n="lead.title">Коротко опишите задачу, и я вернусь с первым разбором.</h2>
+
+            <label class="lead-field">
+              <span data-i18n="lead.nameLabel">Имя</span>
+              <input name="name" type="text" autocomplete="name" required placeholder="Как к вам обращаться" data-i18n-placeholder="lead.namePlaceholder" />
+            </label>
+
+            <label class="lead-field">
+              <span data-i18n="lead.contactLabel">Telegram или телефон</span>
+              <input name="contact" type="text" autocomplete="tel" required placeholder="@username или номер" data-i18n-placeholder="lead.contactPlaceholder" />
+            </label>
+
+            <label class="lead-field">
+              <span data-i18n="lead.taskLabel">Что нужно</span>
+              <select name="task" required>
+                <option value="" data-i18n="lead.taskPlaceholder">Выберите направление</option>
+                <option value="automation" data-i18n="lead.taskAutomation">Автоматизация / бот / заявки</option>
+                <option value="web" data-i18n="lead.taskWeb">Сайт / веб-интерфейс / таблицы</option>
+                <option value="visual" data-i18n="lead.taskVisual">Визуал / видео / контент</option>
+                <option value="audit" data-i18n="lead.taskAudit">Разбор идеи или процесса</option>
+              </select>
+            </label>
+
+            <label class="lead-field">
+              <span data-i18n="lead.messageLabel">Коротко о задаче</span>
+              <textarea name="message" rows="5" required placeholder="Что есть сейчас, что нужно автоматизировать или улучшить" data-i18n-placeholder="lead.messagePlaceholder"></textarea>
+            </label>
+
+            <button class="button button--primary lead-form__submit" type="submit" data-i18n="lead.submit">Отправить заявку</button>
+            <p class="lead-form__status" data-lead-status data-i18n="lead.hint">
+              Сейчас форма безопасно собирает текст заявки и открывает Telegram. Для прямой отправки в личного бота подключается backend endpoint.
+            </p>
+          </form>
         </div>
       </section>
     </main>
@@ -582,6 +648,6 @@
       </div>
     </dialog>
 
-    <script type="module" src="./scripts/main.js"></script>
+    <script type="module" src="./scripts/main.js?v=8"></script>
   </body>
 </html>

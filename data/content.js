@@ -3,7 +3,7 @@ export const translations = {
     meta: {
       pageTitle: "VANTRUFREE | Визуальные системы, контент на основе ИИ и веб-интерфейсы",
       description:
-        "VANTRUFREE создает премиальный визуал на основе ИИ, веб-системы, интерфейсы поверх Google-таблиц и кинематографичный контент для брендов, ресторанов и цифровых продуктов."
+        "VANTRUFREE создает премиальный визуал на основе ИИ, Telegram-автоматизации, веб-системы, интерфейсы поверх Google-таблиц и кинематографичный контент для брендов, ресторанов и цифровых продуктов."
     },
     ui: {
       brandHomeAria: "VANTRUFREE главная",
@@ -15,6 +15,7 @@ export const translations = {
         full: "Подробно"
       },
       nav: {
+        automation: "Автоматизация",
         about: "Манифест",
         cases: "Проекты",
         systems: "Системы",
@@ -29,7 +30,7 @@ export const translations = {
           "VANTRUFREE создает визуал на основе ИИ, видео и веб-системы, которые выглядят дорого и работают на бизнес.",
         lede:
           "От брендовых роликов и ресторанного визуала до сайтов и веб-версий Google-таблиц: я усиливаю упаковку, ускоряю создание контента и перевожу хаотичные процессы в понятный рабочий продукт.",
-        primaryCta: "Смотреть избранные работы",
+        primaryCta: "Разобрать бизнес-системы",
         editorialCta: "Открыть портретную подборку",
         imageAlt: "Портрет VANTRUFREE с красным кинематографичным светом",
         captionPrimary: "Авторское присутствие",
@@ -38,6 +39,18 @@ export const translations = {
         floatAiValue: "Полноценное настроение и подача",
         floatWebLabel: "Веб-системы",
         floatWebValue: "Таблицы, превращённые в интерфейсы"
+      },
+      automation: {
+        eyebrow: "Бизнес-автоматизация",
+        title: "Не просто бот, а управляемая система вокруг процесса.",
+        intro:
+          "Telegram, VK, Google-таблицы, платежи, закрытые каналы, заявки и веб-панели можно собрать в одну понятную цепочку. Ценность не в кнопке бота, а в том, что бизнес меньше делает руками и быстрее видит состояние процесса.",
+        flowLabel: "Как может работать воронка",
+        flowTag: "канал → бот → доступ → учет",
+        noteEyebrow: "Для малого, среднего и крупного бизнеса",
+        noteTitle:
+          "Такую логику можно адаптировать под продажи, обучение, клубы, сервисы, заявки, склады и внутренние процессы.",
+        cta: "Оставить заявку на систему"
       },
       business: {
         eyebrow: "Что я делаю",
@@ -186,6 +199,35 @@ export const translations = {
         primaryCta: "Написать в Telegram",
         secondaryCta: "Посмотреть видео-работы"
       },
+      lead: {
+        formAria: "Заявка на проект",
+        eyebrow: "Заявка",
+        title: "Коротко опишите задачу, и я вернусь с первым разбором.",
+        nameLabel: "Имя",
+        namePlaceholder: "Как к вам обращаться",
+        contactLabel: "Telegram или телефон",
+        contactPlaceholder: "@username или номер",
+        taskLabel: "Что нужно",
+        taskPlaceholder: "Выберите направление",
+        taskAutomation: "Автоматизация / бот / заявки",
+        taskWeb: "Сайт / веб-интерфейс / таблицы",
+        taskVisual: "Визуал / видео / контент",
+        taskAudit: "Разбор идеи или процесса",
+        messageLabel: "Коротко о задаче",
+        messagePlaceholder: "Что есть сейчас, что нужно автоматизировать или улучшить",
+        submit: "Отправить заявку",
+        hint:
+          "Сейчас форма безопасно собирает текст заявки и открывает Telegram. Для прямой отправки в личного бота подключается backend endpoint.",
+        sending: "Отправляю заявку...",
+        success: "Заявка отправлена. Я свяжусь с вами.",
+        telegramFallback: "Открыл Telegram с готовым текстом заявки.",
+        error: "Не удалось отправить автоматически. Напишите мне в Telegram, текст заявки уже подготовлен.",
+        messageTitle: "Новая заявка с сайта VANTRUFREE",
+        messageName: "Имя",
+        messageContact: "Контакт",
+        messageTask: "Задача",
+        messageDetails: "Описание"
+      },
       footer: {
         line: "Визуал на основе ИИ, премиальные веб-интерфейсы и авторская атмосфера бренда."
       },
@@ -225,6 +267,44 @@ export const translations = {
       }
     },
     content: {
+      automationFlow: [
+        {
+          step: "01",
+          title: "Вход из канала или рекламы",
+          text: "Человек приходит из Telegram, VK, сайта, QR-кода или рекламного объявления."
+        },
+        {
+          step: "02",
+          title: "Бот принимает заявку",
+          text: "Бот задает вопросы, показывает кнопки, собирает контакт и ведет пользователя по понятному сценарию."
+        },
+        {
+          step: "03",
+          title: "Оплата, правила и доступ",
+          text: "Можно подключить платежи, приветствие, правила, проверку статуса и выдачу доступа в закрытый канал."
+        },
+        {
+          step: "04",
+          title: "Таблица, база и веб-панель",
+          text: "Заявки, статусы, оплаты и действия уходят в Google-таблицу, базу или веб-интерфейс для владельца."
+        }
+      ],
+      automationCases: [
+        {
+          title: "NOL",
+          meta: "Telegram-продукт / дисциплина / закрытое сообщество",
+          text:
+            "Концепция продукта, где основной канал ведет человека в бота, бот объясняет правила, принимает действие, управляет доступом и может фиксировать состояние участника.",
+          points: ["основной канал", "бот-сценарии", "закрытый доступ", "учет действий"]
+        },
+        {
+          title: "Рядом",
+          meta: "Сообщество / правила / вход через бот",
+          text:
+            "Проект с логикой приветствия, правил, кнопок, проверки условий и перехода в закрытое пространство без ручного сопровождения каждого человека.",
+          points: ["приветствие", "правила", "кнопки", "заявки и статусы"]
+        }
+      ],
       businessCards: [
         {
           tag: "Рестораны / Кафе",
@@ -623,7 +703,7 @@ export const translations = {
     meta: {
       pageTitle: "VANTRUFREE | Visual Systems, AI Content & Web Interfaces",
       description:
-        "VANTRUFREE creates premium AI visuals, web systems, Google Sheets interfaces and cinematic content for brands, restaurants and digital products."
+        "VANTRUFREE creates premium AI visuals, Telegram automation, web systems, Google Sheets interfaces and cinematic content for brands, restaurants and digital products."
     },
     ui: {
       brandHomeAria: "VANTRUFREE home",
@@ -635,6 +715,7 @@ export const translations = {
         full: "Full"
       },
       nav: {
+        automation: "Automation",
         about: "Manifest",
         cases: "Projects",
         systems: "Systems",
@@ -649,7 +730,7 @@ export const translations = {
           "VANTRUFREE creates AI visuals, video and web systems that feel premium and work for business.",
         lede:
           "From brand visuals and food content to websites and Google Sheets web layers: I strengthen presentation, speed up production and turn chaotic processes into clear working products.",
-        primaryCta: "View Selected Work",
+        primaryCta: "Explore Business Systems",
         editorialCta: "Enter Editorial Selection",
         imageAlt: "VANTRUFREE portrait with red cinematic lighting",
         captionPrimary: "Author Presence",
@@ -658,6 +739,18 @@ export const translations = {
         floatAiValue: "Full-scale mood",
         floatWebLabel: "Web systems",
         floatWebValue: "Sheets into interfaces"
+      },
+      automation: {
+        eyebrow: "Business Automation",
+        title: "Not just a bot, but a controlled system around a process.",
+        intro:
+          "Telegram, VK, Google Sheets, payments, private channels, requests and web dashboards can become one clear operational chain. The value is not the bot button itself, but the way a business reduces manual work and sees process state faster.",
+        flowLabel: "How the funnel can work",
+        flowTag: "channel → bot → access → tracking",
+        noteEyebrow: "For small, medium and larger businesses",
+        noteTitle:
+          "This logic can adapt to sales, education, clubs, services, requests, warehouses and internal operations.",
+        cta: "Send a system request"
       },
       business: {
         eyebrow: "What I Do",
@@ -806,6 +899,35 @@ export const translations = {
         primaryCta: "Message on Telegram",
         secondaryCta: "Review Video Works"
       },
+      lead: {
+        formAria: "Project request form",
+        eyebrow: "Request",
+        title: "Briefly describe the task and I will return with an initial breakdown.",
+        nameLabel: "Name",
+        namePlaceholder: "How should I address you",
+        contactLabel: "Telegram or phone",
+        contactPlaceholder: "@username or number",
+        taskLabel: "What do you need",
+        taskPlaceholder: "Choose a direction",
+        taskAutomation: "Automation / bot / requests",
+        taskWeb: "Website / web interface / sheets",
+        taskVisual: "Visuals / video / content",
+        taskAudit: "Idea or process review",
+        messageLabel: "Briefly about the task",
+        messagePlaceholder: "What exists now and what needs automation or improvement",
+        submit: "Send request",
+        hint:
+          "For now the form safely prepares the request text and opens Telegram. Direct delivery to a private bot is connected through a backend endpoint.",
+        sending: "Sending request...",
+        success: "Request sent. I will contact you.",
+        telegramFallback: "Telegram opened with the prepared request text.",
+        error: "Automatic delivery failed. Message me on Telegram; the request text is already prepared.",
+        messageTitle: "New request from VANTRUFREE website",
+        messageName: "Name",
+        messageContact: "Contact",
+        messageTask: "Task",
+        messageDetails: "Details"
+      },
       footer: {
         line: "AI visuals, premium web interfaces and curated brand atmospheres."
       },
@@ -845,6 +967,44 @@ export const translations = {
       }
     },
     content: {
+      automationFlow: [
+        {
+          step: "01",
+          title: "Entry from channel or ads",
+          text: "A person comes from Telegram, VK, a website, QR code or advertising."
+        },
+        {
+          step: "02",
+          title: "The bot receives the request",
+          text: "The bot asks questions, shows buttons, collects contact details and leads the user through a clear scenario."
+        },
+        {
+          step: "03",
+          title: "Payment, rules and access",
+          text: "Payments, welcome messages, rules, status checks and private-channel access can be connected."
+        },
+        {
+          step: "04",
+          title: "Sheet, database and dashboard",
+          text: "Requests, statuses, payments and actions move into Google Sheets, a database or an owner-facing web interface."
+        }
+      ],
+      automationCases: [
+        {
+          title: "NOL",
+          meta: "Telegram product / discipline / private community",
+          text:
+            "A product concept where the main channel leads into a bot, the bot explains rules, receives actions, manages access and can track participant state.",
+          points: ["main channel", "bot scenarios", "private access", "action tracking"]
+        },
+        {
+          title: "Ryadom",
+          meta: "Community / rules / bot-based entry",
+          text:
+            "A project with welcome logic, rules, buttons, condition checks and transition into a private space without manually guiding every person.",
+          points: ["welcome flow", "rules", "buttons", "requests and statuses"]
+        }
+      ],
       businessCards: [
         {
           tag: "Restaurants / Cafes",

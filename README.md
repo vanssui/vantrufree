@@ -74,6 +74,18 @@ VANTRUFREE-portfolio/
 - `highlights` — ключевые возможности
 - `accent` — `gold`, `amber` или `ice`
 
+### 5. Подключить отправку заявок
+
+Форма заявки в `index.html` работает безопасно: если у формы пустой `data-lead-endpoint`, она собирает текст заявки и открывает Telegram.
+
+Когда появится backend или serverless-функция, укажи URL в атрибуте:
+
+```html
+<form data-lead-form data-lead-endpoint="https://example.com/api/leads">
+```
+
+Endpoint должен принимать JSON и уже на сервере отправлять сообщение в Telegram Bot API. Токен Telegram-бота нельзя хранить в HTML или JavaScript сайта.
+
 ## Как открыть локально
 
 Из папки проекта:

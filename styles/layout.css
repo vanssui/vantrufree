@@ -167,6 +167,7 @@
 }
 
 .hero,
+.automation,
 .business,
 .manifest,
 .disciplines,
@@ -194,6 +195,7 @@
 }
 
 .hero__layout,
+.automation__grid,
 .manifest__grid,
 .systems__grid,
 .food__grid,
@@ -217,6 +219,7 @@
 }
 
 .manifest__grid,
+.automation__grid,
 .systems__grid,
 .food__grid,
 .restaurant-comparison,
@@ -260,6 +263,7 @@
 
 @media (max-width: 1080px) {
   .hero__layout,
+  .automation__grid,
   .business-grid,
   .manifest__grid,
   .systems__grid,
@@ -327,6 +331,7 @@
   }
 
   .hero,
+  .automation,
   .business,
   .manifest,
   .disciplines,
@@ -418,6 +423,7 @@
   }
 
   .hero,
+  .automation,
   .business,
   .manifest,
   .disciplines,
