@@ -22,7 +22,7 @@ Required values:
 PORT=8787
 BOT_TOKEN=1234567890:YOUR_TELEGRAM_BOT_TOKEN
 CHAT_ID=123456789
-ALLOWED_ORIGIN=https://vantrufree.com
+ALLOWED_ORIGIN=https://nolclub.ru,https://www.nolclub.ru,https://yoummggh.beget.tech
 ```
 
 Install and start systemd service:
@@ -47,5 +47,5 @@ Test from VPS:
 ```bash
 curl -i -X POST http://127.0.0.1:8787/api/leads \
   -H "Content-Type: application/json" \
-  -d '{"name":"Test","contact":"@test","task":"automation","taskLabel":"Автоматизация","message":"Проверка","language":"ru","source":"VANTRUFREE portfolio","page":"https://vantrufree.com","createdAt":"2026-06-01T00:00:00.000Z"}'
+  -d '{"name":"Test","contact":"@test","task":"automation","taskLabel":"Автоматизация","message":"Проверка","language":"ru","source":"VANTRUFREE portfolio","page":"https://nolclub.ru","createdAt":"2026-06-01T00:00:00.000Z"}'
 ```

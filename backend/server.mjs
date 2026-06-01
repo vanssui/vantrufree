@@ -3,14 +3,29 @@ import http from "node:http";
 const PORT = Number(process.env.PORT || 8787);
 const BOT_TOKEN = process.env.BOT_TOKEN;
 const CHAT_ID = process.env.CHAT_ID;
-const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || "*";
+const allowedOrigins = (process.env.ALLOWED_ORIGIN || "*")
+  .split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
 
 const requiredFields = ["name", "contact", "task", "message"];
 
-const sendJson = (res, status, payload) => {
+const getCorsOrigin = (req) => {
+  if (allowedOrigins.includes("*")) return "*";
+
+  const requestOrigin = req.headers.origin;
+  if (requestOrigin && allowedOrigins.includes(requestOrigin)) {
+    return requestOrigin;
+  }
+
+  return allowedOrigins[0] || "*";
+};
+
+const sendJson = (req, res, status, payload) => {
   res.writeHead(status, {
     "Content-Type": "application/json; charset=utf-8",
-    "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
+    "Access-Control-Allow-Origin": getCorsOrigin(req),
+    "Vary": "Origin",
     "Access-Control-Allow-Headers": "Content-Type",
     "Access-Control-Allow-Methods": "POST,OPTIONS"
   });
@@ -45,17 +60,17 @@ const buildTelegramMessage = (payload) => {
 
 const requestHandler = async (req, res) => {
   if (req.method === "OPTIONS") {
-    sendJson(res, 204, {});
+    sendJson(req, res, 204, {});
     return;
   }
 
   if (req.method !== "POST" || req.url !== "/api/leads") {
-    sendJson(res, 404, { ok: false, error: "Not found" });
+    sendJson(req, res, 404, { ok: false, error: "Not found" });
     return;
   }
 
   if (!BOT_TOKEN || !CHAT_ID) {
-    sendJson(res, 500, { ok: false, error: "Server is not configured" });
+    sendJson(req, res, 500, { ok: false, error: "Server is not configured" });
     return;
   }
 
@@ -72,7 +87,7 @@ const requestHandler = async (req, res) => {
       const body = JSON.parse(raw || "{}");
       const missing = requiredFields.filter((field) => !normalize(body[field]));
       if (missing.length) {
-        sendJson(res, 400, { ok: false, error: `Missing fields: ${missing.join(", ")}` });
+        sendJson(req, res, 400, { ok: false, error: `Missing fields: ${missing.join(", ")}` });
         return;
       }
 
@@ -90,13 +105,13 @@ const requestHandler = async (req, res) => {
 
       if (!tgResponse.ok) {
         const details = await tgResponse.text();
-        sendJson(res, 502, { ok: false, error: "Telegram API request failed", details });
+        sendJson(req, res, 502, { ok: false, error: "Telegram API request failed", details });
         return;
       }
 
-      sendJson(res, 200, { ok: true });
+      sendJson(req, res, 200, { ok: true });
     } catch (error) {
-      sendJson(res, 400, { ok: false, error: "Invalid JSON payload", details: String(error) });
+      sendJson(req, res, 400, { ok: false, error: "Invalid JSON payload", details: String(error) });
     }
   });
 };

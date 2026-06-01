@@ -95,7 +95,7 @@ node --env-file=.env server.mjs
 
 - `BOT_TOKEN` — токен вашего бота.
 - `CHAT_ID` — ваш приватный chat id (или id админ-чата).
-- `ALLOWED_ORIGIN` — домен сайта (например, `https://vantrufree.com`).
+- `ALLOWED_ORIGIN` — домены сайта через запятую (например, `https://nolclub.ru,https://www.nolclub.ru,https://yoummggh.beget.tech`).
 
 Как узнать `CHAT_ID`:
 
