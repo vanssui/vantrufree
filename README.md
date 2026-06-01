@@ -74,17 +74,46 @@ VANTRUFREE-portfolio/
 - `highlights` — ключевые возможности
 - `accent` — `gold`, `amber` или `ice`
 
-### 5. Подключить отправку заявок
+### 5. Подключить отправку заявок (Telegram)
 
-Форма заявки в `index.html` работает безопасно: если у формы пустой `data-lead-endpoint`, она собирает текст заявки и открывает Telegram.
+Форма уже настроена на `data-lead-endpoint="/api/leads"`.
 
-Когда появится backend или serverless-функция, укажи URL в атрибуте:
+Добавлен backend:
 
-```html
-<form data-lead-form data-lead-endpoint="https://example.com/api/leads">
+- `backend/server.mjs` — принимает `POST /api/leads`, валидирует поля и отправляет заявку в Telegram Bot API.
+- `backend/.env.example` — шаблон переменных окружения.
+
+Быстрый запуск:
+
+```bash
+cd backend
+cp .env.example .env
+node --env-file=.env server.mjs
 ```
 
-Endpoint должен принимать JSON и уже на сервере отправлять сообщение в Telegram Bot API. Токен Telegram-бота нельзя хранить в HTML или JavaScript сайта.
+Нужно заполнить:
+
+- `BOT_TOKEN` — токен вашего бота.
+- `CHAT_ID` — ваш приватный chat id (или id админ-чата).
+- `ALLOWED_ORIGIN` — домен сайта (например, `https://vantrufree.com`).
+
+Как узнать `CHAT_ID`:
+
+1. Напишите сообщение вашему боту в Telegram.
+2. Откройте `https://api.telegram.org/bot<BOT_TOKEN>/getUpdates`.
+3. Возьмите `message.chat.id` из ответа.
+
+Пример проксирования в Nginx:
+
+```nginx
+location /api/leads {
+  proxy_pass http://127.0.0.1:8787/api/leads;
+  proxy_set_header Host $host;
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header X-Forwarded-Proto $scheme;
+}
+```
 
 ## Как открыть локально
 
