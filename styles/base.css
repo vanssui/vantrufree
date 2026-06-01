@@ -166,6 +166,57 @@ main {
   box-shadow: 0 18px 44px rgba(0, 0, 0, 0.3);
 }
 
+.glass3d {
+  --filter-glass3d: blur(28px) brightness(0.9) saturate(2);
+  --color-glass3d: hsl(0 0% 100% / 0.06);
+  --noise-glass3d: url("https://www.transparenttextures.com/patterns/concrete-wall-3.png");
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.glass3d::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  border-radius: inherit;
+  -webkit-backdrop-filter: var(--filter-glass3d);
+  backdrop-filter: var(--filter-glass3d);
+  background-color: var(--color-glass3d);
+  background-image: var(--noise-glass3d);
+  background-repeat: repeat;
+  background-size: 100px;
+}
+
+.glass3d::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow:
+    inset 2px 2px 1px -3px hsl(205 20% 90% / 0.8),
+    inset 4px 4px 2px -6px hsl(205 20% 90% / 0.3),
+    inset 1.5px 1.5px 1.5px -0.75px hsl(205 20% 90% / 0.15),
+    inset 1.5px 1.5px 0.25px hsl(205 20% 90% / 0.03),
+    inset 0 0 0.25px 0.5px hsl(205 20% 90% / 0.03);
+}
+
+.glass3d > * {
+  position: relative;
+  z-index: 6;
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass3d::before {
+    background-color: rgba(14, 14, 14, 0.78);
+  }
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(30px);

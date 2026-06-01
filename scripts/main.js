@@ -126,7 +126,7 @@ const renderDynamicContent = () => {
     "[data-proof-strip]",
     content.proofPills,
     ({ title, text }) => `
-      <article class="proof-pill">
+      <article class="proof-pill glass3d">
         <strong>${title}</strong>
         <span>${text}</span>
       </article>
@@ -137,7 +137,7 @@ const renderDynamicContent = () => {
     "[data-business-grid]",
     content.businessCards,
     ({ tag, title, problem, result }) => `
-      <article class="business-card reveal">
+      <article class="business-card glass3d reveal">
         <p class="business-card__tag">${tag}</p>
         <h3>${title}</h3>
         <p>${problem}</p>
@@ -156,7 +156,7 @@ const renderDynamicContent = () => {
     "[data-discipline-grid]",
     content.disciplines,
     ({ tag, title, text }) => `
-      <article class="discipline-card reveal">
+      <article class="discipline-card glass3d reveal">
         <span class="discipline-card__index">${tag}</span>
         <h3>${title}</h3>
         <p>${text}</p>
@@ -168,7 +168,7 @@ const renderDynamicContent = () => {
     "[data-cases-grid]",
     content.caseStudies,
     ({ accent, meta, title, summary, impact, stack, highlights, ctaLabel, url }) => `
-      <article class="case-card case-card--${accent} reveal">
+      <article class="case-card case-card--${accent} glass3d reveal">
         <p class="case-card__meta">${meta}</p>
         <h3>${title}</h3>
         <p>${summary}</p>
@@ -196,7 +196,7 @@ const renderDynamicContent = () => {
     "[data-workflow-list]",
     content.workflow,
     ({ title, text }, index) => `
-      <article class="workflow-card reveal">
+      <article class="workflow-card glass3d reveal">
         <span class="workflow-card__step">0${index + 1}</span>
         <h3>${title}</h3>
         <p>${text}</p>
@@ -208,7 +208,7 @@ const renderDynamicContent = () => {
     "[data-principle-list]",
     content.principles,
     ({ title, text }) => `
-      <article class="principle-card reveal">
+      <article class="principle-card glass3d reveal">
         <h3>${title}</h3>
         <p>${text}</p>
       </article>
@@ -280,7 +280,7 @@ const renderDynamicContent = () => {
     "[data-restaurant-comparison]",
     content.restaurantComparison,
     ({ title, points }) => `
-      <article class="restaurant-comparison__card reveal">
+      <article class="restaurant-comparison__card glass3d reveal">
         <h3>${title}</h3>
         <ul>
           ${points.map((item) => `<li>${item}</li>`).join("")}
@@ -293,7 +293,7 @@ const renderDynamicContent = () => {
     "[data-restaurant-faq]",
     content.restaurantFaq,
     ({ title, text }) => `
-      <article class="restaurant-faq__card reveal">
+      <article class="restaurant-faq__card glass3d reveal">
         <h3>${title}</h3>
         <p>${text}</p>
       </article>
@@ -304,7 +304,7 @@ const renderDynamicContent = () => {
     "[data-campaign-grid]",
     content.campaignCards,
     ({ title, text }) => `
-      <article class="editorial-mini">
+      <article class="editorial-mini glass3d">
         <h3>${title}</h3>
         <p>${text}</p>
       </article>
@@ -349,7 +349,7 @@ const renderDynamicContent = () => {
     "[data-editorial-grid]",
     content.editorial,
     ({ title, text }) => `
-      <article class="editorial-mini">
+      <article class="editorial-mini glass3d">
         <h3>${title}</h3>
         <p>${text}</p>
       </article>

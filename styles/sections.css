@@ -102,6 +102,44 @@ body[data-read-mode="short"] .restaurant-faq__card p {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
 }
 
+.hero-card__seal.glass3d,
+.proof-pill.glass3d,
+.business-card.glass3d,
+.discipline-card.glass3d,
+.case-card.glass3d,
+.workflow-card.glass3d,
+.principle-card.glass3d,
+.restaurant-comparison__card.glass3d,
+.restaurant-faq__card.glass3d,
+.manifest__copy.glass3d,
+.food__copy.glass3d,
+.food__card.glass3d,
+.restaurant-economics__intro.glass3d,
+.restaurant-systems-bridge.glass3d,
+.campaign__content.glass3d,
+.editorial__content.glass3d,
+.editorial-mini.glass3d,
+.contact-card.glass3d {
+  --filter-glass3d: blur(24px) brightness(0.88) saturate(2);
+  --color-glass3d: hsl(0 0% 100% / 0.045);
+
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    var(--shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.hero-card__seal.glass3d {
+  --filter-glass3d: blur(18px) brightness(0.86) saturate(1.9);
+  --color-glass3d: hsl(0 0% 100% / 0.035);
+
+  background: rgba(8, 8, 8, 0.18);
+}
+
+.contact-card.glass3d {
+  --color-glass3d: hsl(24 68% 64% / 0.055);
+}
+
 .proof-pill strong {
   display: block;
   font-size: 1.05rem;
