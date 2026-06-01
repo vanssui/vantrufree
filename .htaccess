@@ -1,0 +1,7 @@
+RewriteEngine On
+
+RewriteRule ^api/leads$ api/leads.php [L]
+
+<FilesMatch "^\.|config\.local\.php$">
+    Require all denied
+</FilesMatch>

@@ -81,6 +81,7 @@ VANTRUFREE-portfolio/
 Добавлен backend:
 
 - `backend/server.mjs` — принимает `POST /api/leads`, валидирует поля и отправляет заявку в Telegram Bot API.
+- `api/leads.php` — PHP-вариант для Beget/shared hosting без Node.js и systemd.
 - `backend/.env.example` — шаблон переменных окружения.
 
 Быстрый запуск:
@@ -95,7 +96,7 @@ node --env-file=.env server.mjs
 
 - `BOT_TOKEN` — токен вашего бота.
 - `CHAT_ID` — ваш приватный chat id (или id админ-чата).
-- `ALLOWED_ORIGIN` — домены сайта через запятую (например, `https://nolclub.ru,https://www.nolclub.ru,https://yoummggh.beget.tech`).
+- `ALLOWED_ORIGIN` — домены сайта через запятую (например, `https://nolclub.ru,https://www.nolclub.ru,https://yoummgqh.beget.tech`).
 
 Как узнать `CHAT_ID`:
 
