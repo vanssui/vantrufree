@@ -18,9 +18,9 @@
     <meta name="apple-mobile-web-app-title" content="VANTRUFREE" />
     <meta name="application-name" content="VANTRUFREE" />
     <meta name="theme-color" content="#090909" />
-    <link rel="stylesheet" href="./styles/base.css?v=8" />
-    <link rel="stylesheet" href="./styles/layout.css?v=8" />
-    <link rel="stylesheet" href="./styles/sections.css?v=8" />
+    <link rel="stylesheet" href="./styles/base.css?v=10" />
+    <link rel="stylesheet" href="./styles/layout.css?v=10" />
+    <link rel="stylesheet" href="./styles/sections.css?v=10" />
   </head>
   <body class="is-preloading" data-scene="hero" data-read-mode="full">
     <div class="site-preloader" data-preloader aria-hidden="true">
@@ -97,6 +97,7 @@
             <div class="hero__actions">
               <a class="button button--primary" href="#automation" data-i18n="hero.primaryCta">Разобрать бизнес-системы</a>
               <a class="button button--ghost" href="#editorial" data-i18n="hero.editorialCta">Открыть портретную подборку</a>
+              <a class="button button--ghost button--route" href="#site-route" data-i18n="hero.routeCta">Понять структуру сайта</a>
             </div>
             <div class="proof-strip" data-proof-strip></div>
           </div>
@@ -117,6 +118,39 @@
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="site-route shell section-observe" id="site-route" data-scene="hero">
+        <div class="site-route__intro reveal">
+          <p class="eyebrow" data-i18n="route.eyebrow">Маршрут по сайту</p>
+          <h2 data-i18n="route.title">Если времени мало, двигайтесь по четырём главным частям.</h2>
+          <p data-i18n="route.text">
+            Сайт устроен не как одна бесконечная лента, а как несколько смысловых блоков: кто я, какой визуальный язык собираю, какие рабочие системы делаю и как оставить заявку.
+          </p>
+        </div>
+
+        <div class="site-route__grid">
+          <a class="site-route__card glass3d reveal" href="#about">
+            <span data-i18n="route.itemOneIndex">01</span>
+            <strong data-i18n="route.itemOneTitle">Познакомиться с подходом</strong>
+            <p data-i18n="route.itemOneText">Манифест, системное мышление и почему ИИ для меня рабочий инструмент.</p>
+          </a>
+          <a class="site-route__card glass3d reveal reveal-delay" href="#garments">
+            <span data-i18n="route.itemTwoIndex">02</span>
+            <strong data-i18n="route.itemTwoTitle">Увидеть визуальный язык</strong>
+            <p data-i18n="route.itemTwoText">Одежда, кампании, портреты, видео и ресторанный визуал.</p>
+          </a>
+          <a class="site-route__card glass3d reveal reveal-delay" href="#cases">
+            <span data-i18n="route.itemThreeIndex">03</span>
+            <strong data-i18n="route.itemThreeTitle">Разобрать проекты</strong>
+            <p data-i18n="route.itemThreeText">Трекер, складские системы и веб-версии таблиц.</p>
+          </a>
+          <a class="site-route__card site-route__card--action glass3d reveal reveal-delay" href="#lead">
+            <span data-i18n="route.itemFourIndex">04</span>
+            <strong data-i18n="route.itemFourTitle">Оставить заявку</strong>
+            <p data-i18n="route.itemFourText">Сразу перейти к форме, если уже понятно, что нужно обсудить.</p>
+          </a>
         </div>
       </section>
 
@@ -146,7 +180,7 @@
             <p class="eyebrow" data-i18n="automation.noteEyebrow">Для малого, среднего и крупного бизнеса</p>
             <h3 data-i18n="automation.noteTitle">Такую логику можно адаптировать под продажи, обучение, клубы, сервисы, заявки, склады и внутренние процессы.</h3>
           </div>
-          <a class="button button--primary" href="#contact" data-i18n="automation.cta">Оставить заявку на систему</a>
+          <a class="button button--primary" href="#lead" data-i18n="automation.cta">Оставить заявку на систему</a>
         </div>
       </section>
 
@@ -509,7 +543,7 @@
             </div>
           </div>
 
-          <form class="lead-form glass3d reveal reveal-delay" data-lead-form data-lead-endpoint="https://nolclub.ru/api/vantrufree/leads" aria-label="Заявка на проект" data-i18n-aria-label="lead.formAria">
+          <form class="lead-form glass3d reveal reveal-delay" id="lead" data-lead-form data-lead-endpoint="https://nolclub.ru/api/vantrufree/leads" aria-label="Заявка на проект" data-i18n-aria-label="lead.formAria">
             <p class="eyebrow" data-i18n="lead.eyebrow">Заявка</p>
             <h2 data-i18n="lead.title">Коротко опишите задачу, и я вернусь с первым разбором.</h2>
 
@@ -648,6 +682,6 @@
       </div>
     </dialog>
 
-    <script type="module" src="./scripts/main.js?v=8"></script>
+    <script type="module" src="./scripts/main.js?v=10"></script>
   </body>
 </html>

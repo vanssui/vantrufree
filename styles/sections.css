@@ -93,16 +93,28 @@ body[data-read-mode="short"] .restaurant-faq__card p {
   margin-top: 30px;
 }
 
+.button--route {
+  border-color: rgba(220, 191, 139, 0.22);
+}
+
 .proof-strip {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   margin-top: 26px;
+  max-width: 560px;
 }
 
 .proof-pill {
-  padding: 16px 18px;
+  display: grid;
+  grid-template-columns: minmax(118px, 0.55fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  min-height: 104px;
+  padding: 18px 20px;
   border-radius: var(--radius-md);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  background:
+    linear-gradient(135deg, rgba(195, 164, 109, 0.1), transparent 44%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018));
 }
 
 .automation__grid {
@@ -287,7 +299,8 @@ body[data-read-mode="short"] .restaurant-faq__card p {
 
 .hero__visual {
   position: relative;
-  min-height: 860px;
+  min-height: 760px;
+  margin-top: clamp(20px, 4vw, 58px);
 }
 
 .hero-card {
@@ -312,7 +325,84 @@ body[data-read-mode="short"] .restaurant-faq__card p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center top;
+}
+
+.site-route {
+  padding-top: 28px;
+}
+
+.site-route__intro {
+  max-width: 760px;
+  margin-bottom: 24px;
+}
+
+.site-route__intro h2 {
+  margin: 0;
+  max-width: 16ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.8vw, 3.65rem);
+  line-height: 1.02;
+  letter-spacing: -0.024em;
+}
+
+.site-route__intro p:not(.eyebrow) {
+  max-width: 58ch;
+  margin: 16px 0 0;
+  color: var(--muted-strong);
+}
+
+.site-route__grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.site-route__card {
+  min-height: 210px;
+  display: grid;
+  align-content: space-between;
+  gap: 18px;
+  padding: 22px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(135deg, rgba(200, 63, 56, 0.08), transparent 46%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.016));
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.2);
+  transition: transform 0.28s ease, border-color 0.28s ease, background-color 0.28s ease;
+}
+
+.site-route__card:hover,
+.site-route__card:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(220, 191, 139, 0.36);
+}
+
+.site-route__card--action {
+  background:
+    linear-gradient(135deg, rgba(200, 63, 56, 0.24), rgba(195, 164, 109, 0.16)),
+    rgba(255, 255, 255, 0.035);
+}
+
+.site-route__card span {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(195, 164, 109, 0.12);
+  color: rgba(246, 224, 184, 0.86);
+  font-size: 0.78rem;
+}
+
+.site-route__card strong {
+  display: block;
+  font-size: clamp(1.05rem, 1.3vw, 1.28rem);
+}
+
+.site-route__card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
 }
 
 .hero-card__seal {
@@ -1141,6 +1231,7 @@ body[data-read-mode="short"] .restaurant-faq__card p {
   padding: clamp(24px, 4vw, 34px);
   margin-top: 18px;
   border-radius: 32px;
+  scroll-margin-top: 110px;
 }
 
 .lead-form h2 {
@@ -1447,6 +1538,11 @@ body[data-read-mode="short"] .restaurant-faq__card p {
 
   .hero__visual {
     min-height: 580px;
+    margin-top: 0;
+  }
+
+  .site-route__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .garments__summary {
@@ -1501,6 +1597,16 @@ body[data-read-mode="short"] .restaurant-faq__card p {
 
   .hero__visual {
     min-height: 440px;
+  }
+
+  .site-route__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .site-route__card {
+    min-height: 152px;
+    padding: 20px;
   }
 
   .hero-card__seal {
@@ -1646,7 +1752,22 @@ body[data-read-mode="short"] .restaurant-faq__card p {
   }
 
   .proof-pill {
+    grid-template-columns: 1fr;
     padding: 14px 15px;
+    min-height: unset;
+  }
+
+  .site-route {
+    padding-top: 24px;
+  }
+
+  .site-route__intro h2 {
+    max-width: 11ch;
+    font-size: clamp(1.72rem, 9.2vw, 2.7rem);
+  }
+
+  .site-route__card {
+    min-height: 138px;
   }
 
   .automation-map__header {

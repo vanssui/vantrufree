@@ -167,6 +167,7 @@
 }
 
 .hero,
+.site-route,
 .automation,
 .business,
 .manifest,
@@ -185,6 +186,7 @@
 
 .contact {
   padding-top: 108px;
+  padding-bottom: max(108px, 56vh);
 }
 
 .hero {
@@ -214,7 +216,7 @@
 
 .hero__layout {
   grid-template-columns: minmax(0, 0.86fr) minmax(520px, 1.14fr);
-  align-items: center;
+  align-items: start;
   gap: 40px;
 }
 
@@ -231,6 +233,7 @@
 }
 
 .proof-strip,
+.site-route__grid,
 .discipline-grid,
 .cases-grid,
 .video-grid {
@@ -331,6 +334,7 @@
   }
 
   .hero,
+  .site-route,
   .automation,
   .business,
   .manifest,
@@ -423,6 +427,7 @@
   }
 
   .hero,
+  .site-route,
   .automation,
   .business,
   .manifest,

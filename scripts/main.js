@@ -1,4 +1,4 @@
-import { translations } from "../data/content.js?v=8";
+import { translations } from "../data/content.js?v=10";
 
 const defaultLanguage = "ru";
 const storageKey = "vtf-language";
@@ -622,6 +622,23 @@ document.querySelectorAll("[data-read-mode-button]").forEach((button) => {
   button.addEventListener("click", () => {
     setReadMode(button.dataset.readModeButton);
   });
+});
+
+document.addEventListener("click", (event) => {
+  const link = event.target.closest("a[href^='#']");
+  if (!link) return;
+
+  const hash = link.getAttribute("href");
+  if (!hash || hash === "#") return;
+
+  const target = document.querySelector(hash);
+  if (!target) return;
+
+  event.preventDefault();
+  const headerOffset = window.matchMedia("(max-width: 700px)").matches ? 92 : 104;
+  const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+  history.pushState(null, "", hash);
+  window.scrollTo({ top: Math.max(top, 0), behavior: "smooth" });
 });
 
 document.addEventListener("click", (event) => {
