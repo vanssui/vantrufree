@@ -34,6 +34,12 @@ curl -i -X POST https://nolclub.ru/api/leads \
 
 ## VPS with Node.js
 
+The static portfolio can stay on GitHub Pages. The form sends leads to:
+
+```text
+https://nolclub.ru/api/vantrufree/leads
+```
+
 Expected project path on VPS:
 
 ```text
@@ -67,7 +73,16 @@ sudo systemctl restart vantrufree-leads
 sudo systemctl status vantrufree-leads
 ```
 
-Add `deploy/nginx-api-location.conf` inside the existing site `server { ... }` block, then reload Nginx:
+If the VPS uses Caddy with the existing NOL bot, add the route from
+`deploy/caddy-vantrufree-api.conf` before the existing `reverse_proxy bot:8080`,
+then reload Caddy:
+
+```bash
+docker compose restart caddy
+```
+
+If the VPS uses Nginx, add `deploy/nginx-api-location.conf` inside the existing
+site `server { ... }` block, then reload Nginx:
 
 ```bash
 sudo nginx -t
@@ -78,6 +93,14 @@ Test from VPS:
 
 ```bash
 curl -i -X POST http://127.0.0.1:8787/api/leads \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Test","contact":"@test","task":"automation","taskLabel":"Автоматизация","message":"Проверка","language":"ru","source":"VANTRUFREE portfolio","page":"https://nolclub.ru","createdAt":"2026-06-01T00:00:00.000Z"}'
+```
+
+Test public endpoint:
+
+```bash
+curl -i -X POST https://nolclub.ru/api/vantrufree/leads \
   -H "Content-Type: application/json" \
   -d '{"name":"Test","contact":"@test","task":"automation","taskLabel":"Автоматизация","message":"Проверка","language":"ru","source":"VANTRUFREE portfolio","page":"https://nolclub.ru","createdAt":"2026-06-01T00:00:00.000Z"}'
 ```

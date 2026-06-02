@@ -9,6 +9,7 @@ const allowedOrigins = (process.env.ALLOWED_ORIGIN || "*")
   .filter(Boolean);
 
 const requiredFields = ["name", "contact", "task", "message"];
+const leadPaths = new Set(["/api/leads", "/api/vantrufree/leads"]);
 
 const getCorsOrigin = (req) => {
   if (allowedOrigins.includes("*")) return "*";
@@ -64,7 +65,9 @@ const requestHandler = async (req, res) => {
     return;
   }
 
-  if (req.method !== "POST" || req.url !== "/api/leads") {
+  const { pathname } = new URL(req.url || "/", "http://localhost");
+
+  if (req.method !== "POST" || !leadPaths.has(pathname)) {
     sendJson(req, res, 404, { ok: false, error: "Not found" });
     return;
   }
