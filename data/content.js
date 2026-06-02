@@ -217,7 +217,7 @@ export const translations = {
         messagePlaceholder: "Что есть сейчас, что нужно автоматизировать или улучшить",
         submit: "Отправить заявку",
         hint:
-          "Сейчас форма безопасно собирает текст заявки и открывает Telegram. Для прямой отправки в личного бота подключается backend endpoint.",
+          "Форма отправляет заявку напрямую в Telegram. Если сервер временно недоступен, откроется готовое сообщение для ручной отправки.",
         sending: "Отправляю заявку...",
         success: "Заявка отправлена. Я свяжусь с вами.",
         telegramFallback: "Открыл Telegram с готовым текстом заявки.",
@@ -917,7 +917,7 @@ export const translations = {
         messagePlaceholder: "What exists now and what needs automation or improvement",
         submit: "Send request",
         hint:
-          "For now the form safely prepares the request text and opens Telegram. Direct delivery to a private bot is connected through a backend endpoint.",
+          "The form sends requests directly to Telegram. If the server is temporarily unavailable, it opens a prepared message for manual sending.",
         sending: "Sending request...",
         success: "Request sent. I will contact you.",
         telegramFallback: "Telegram opened with the prepared request text.",

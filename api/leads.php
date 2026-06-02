@@ -2,7 +2,29 @@
 
 declare(strict_types=1);
 
-$allowedOrigins = array_filter(array_map('trim', explode(',', getenv('ALLOWED_ORIGIN') ?: '*')));
+$localConfigPath = __DIR__ . '/config.local.php';
+$localConfig = [];
+
+if (is_file($localConfigPath)) {
+    $loadedConfig = require $localConfigPath;
+    if (is_array($loadedConfig)) {
+        $localConfig = $loadedConfig;
+    }
+}
+
+$configValue = static function (string $key, string $fallback = '') use ($localConfig): string {
+    $envValue = getenv($key);
+
+    if (is_string($envValue) && $envValue !== '') {
+        return $envValue;
+    }
+
+    $localValue = $localConfig[$key] ?? $localConfig[strtolower($key)] ?? $fallback;
+
+    return is_string($localValue) ? trim($localValue) : $fallback;
+};
+
+$allowedOrigins = array_filter(array_map('trim', explode(',', $configValue('ALLOWED_ORIGIN', '*'))));
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 
 if (in_array('*', $allowedOrigins, true)) {
@@ -30,8 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$botToken = getenv('BOT_TOKEN') ?: '';
-$chatId = getenv('CHAT_ID') ?: '';
+$botToken = $configValue('BOT_TOKEN');
+$chatId = $configValue('CHAT_ID');
 
 if ($botToken === '' || $chatId === '') {
     http_response_code(500);

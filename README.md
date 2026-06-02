@@ -82,6 +82,7 @@ VANTRUFREE-portfolio/
 
 - `backend/server.mjs` — принимает `POST /api/leads`, валидирует поля и отправляет заявку в Telegram Bot API.
 - `api/leads.php` — PHP-вариант для Beget/shared hosting без Node.js и systemd.
+- `api/config.local.example.php` — шаблон закрытого PHP-конфига для хостинга без SSH и переменных окружения.
 - `backend/.env.example` — шаблон переменных окружения.
 
 Быстрый запуск:
@@ -97,6 +98,13 @@ node --env-file=.env server.mjs
 - `BOT_TOKEN` — токен вашего бота.
 - `CHAT_ID` — ваш приватный chat id (или id админ-чата).
 - `ALLOWED_ORIGIN` — домены сайта через запятую (например, `https://nolclub.ru,https://www.nolclub.ru,https://yoummgqh.beget.tech`).
+
+Если на хостинге нет SSH или неудобно настраивать переменные окружения:
+
+1. Скопируйте `api/config.local.example.php` в `api/config.local.php`.
+2. Впишите реальные `BOT_TOKEN`, `CHAT_ID` и домены сайта.
+3. Загрузите `api/config.local.php` на хостинг рядом с `api/leads.php`.
+4. Не коммитьте этот файл: он добавлен в `.gitignore`, а `.htaccess` закрывает прямой доступ к `config.local.php`.
 
 Как узнать `CHAT_ID`:
 

@@ -17,6 +17,13 @@ SetEnv ALLOWED_ORIGIN "https://nolclub.ru,https://www.nolclub.ru,https://yoummgq
 
 The personal Telegram `CHAT_ID` can be the same numeric id used in existing bot admin configs.
 
+If SSH or hosting environment variables are not available, use a private PHP config instead:
+
+1. Copy `api/config.local.example.php` to `api/config.local.php`.
+2. Put real `BOT_TOKEN`, `CHAT_ID` and `ALLOWED_ORIGIN` values there.
+3. Upload `api/config.local.php` next to `api/leads.php`.
+4. Do not commit it. The repository ignores it, and `.htaccess` blocks direct access to `config.local.php`.
+
 Test after deploy:
 
 ```bash
