@@ -98,8 +98,8 @@ main {
 }
 
 .section-heading {
-  max-width: 860px;
-  margin-bottom: 34px;
+  max-width: none;
+  margin-bottom: clamp(34px, 4vw, 52px);
 }
 
 .section-intro {
@@ -116,6 +116,46 @@ main {
   font-size: clamp(1.9rem, 4vw, 3.85rem);
   line-height: 1.02;
   letter-spacing: -0.022em;
+}
+
+@media (min-width: 901px) {
+  .section-heading:has(.section-intro) {
+    display: grid;
+    grid-template-columns: minmax(0, 0.98fr) minmax(300px, 0.58fr);
+    column-gap: clamp(30px, 5vw, 76px);
+    row-gap: 14px;
+    align-items: end;
+  }
+
+  .section-heading:has(.section-intro) .eyebrow {
+    grid-column: 1 / -1;
+  }
+
+  .section-heading:has(.section-intro) .section-intro {
+    max-width: 52ch;
+    margin: 0;
+    align-self: end;
+  }
+
+  .section-heading:not(:has(.section-intro)) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(180px, 0.32fr);
+    column-gap: clamp(24px, 4vw, 62px);
+    row-gap: 14px;
+    align-items: end;
+  }
+
+  .section-heading:not(:has(.section-intro)) .eyebrow {
+    grid-column: 1 / -1;
+  }
+
+  .section-heading:not(:has(.section-intro))::after {
+    content: "";
+    display: block;
+    height: 1px;
+    margin-bottom: 0.7rem;
+    background: linear-gradient(90deg, rgba(220, 191, 139, 0.36), rgba(255, 255, 255, 0.05), transparent);
+  }
 }
 
 .button {

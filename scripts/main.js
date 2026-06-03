@@ -1,4 +1,4 @@
-import { translations } from "../data/content.js?v=10";
+import { translations } from "../data/content.js?v=11";
 
 const defaultLanguage = "ru";
 const storageKey = "vtf-language";
