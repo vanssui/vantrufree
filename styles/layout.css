@@ -167,6 +167,7 @@
 }
 
 .hero,
+.entry-gate,
 .site-route,
 .automation,
 .business,
@@ -197,6 +198,7 @@
 }
 
 .hero__layout,
+.entry-gate__panel,
 .automation__grid,
 .manifest__grid,
 .systems__grid,
@@ -266,6 +268,7 @@
 
 @media (max-width: 1080px) {
   .hero__layout,
+  .entry-gate__panel,
   .automation__grid,
   .business-grid,
   .manifest__grid,
@@ -334,6 +337,7 @@
   }
 
   .hero,
+  .entry-gate,
   .site-route,
   .automation,
   .business,
@@ -427,6 +431,7 @@
   }
 
   .hero,
+  .entry-gate,
   .site-route,
   .automation,
   .business,

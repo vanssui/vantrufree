@@ -1,4 +1,4 @@
-import { translations } from "../data/content.js?v=11";
+import { translations } from "../data/content.js?v=12";
 
 const defaultLanguage = "ru";
 const storageKey = "vtf-language";
@@ -140,6 +140,30 @@ const renderDynamicContent = () => {
           <h3>${title}</h3>
           <p>${text}</p>
         </div>
+      </article>
+    `
+  );
+
+  renderList(
+    "[data-automation-map]",
+    content.automationMap,
+    ({ id, kicker, title, text }) => `
+      <article class="automation-node automation-node--${id}" data-node="${id}">
+        <span>${kicker}</span>
+        <h3>${title}</h3>
+        <p>${text}</p>
+      </article>
+    `
+  );
+
+  renderList(
+    "[data-automation-principles]",
+    content.automationPrinciples,
+    ({ index, title, text }) => `
+      <article class="automation-principle glass3d reveal">
+        <span>${index}</span>
+        <h3>${title}</h3>
+        <p>${text}</p>
       </article>
     `
   );

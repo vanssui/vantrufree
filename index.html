@@ -18,9 +18,9 @@
     <meta name="apple-mobile-web-app-title" content="VANTRUFREE" />
     <meta name="application-name" content="VANTRUFREE" />
     <meta name="theme-color" content="#090909" />
-    <link rel="stylesheet" href="./styles/base.css?v=11" />
-    <link rel="stylesheet" href="./styles/layout.css?v=11" />
-    <link rel="stylesheet" href="./styles/sections.css?v=11" />
+    <link rel="stylesheet" href="./styles/base.css?v=12" />
+    <link rel="stylesheet" href="./styles/layout.css?v=12" />
+    <link rel="stylesheet" href="./styles/sections.css?v=12" />
   </head>
   <body class="is-preloading" data-scene="hero" data-read-mode="full">
     <div class="site-preloader" data-preloader aria-hidden="true">
@@ -84,6 +84,30 @@
     </header>
 
     <main>
+      <section class="entry-gate shell section-observe" id="start" data-scene="matrix">
+        <div class="entry-gate__panel glass3d reveal">
+          <div class="entry-gate__copy">
+            <p class="eyebrow" data-i18n="entry.eyebrow">Выберите маршрут</p>
+            <h1 data-i18n="entry.title">Выбери маршрут: портфолио или системы.</h1>
+            <p data-i18n="entry.text">
+              Первый путь показывает портфолио, визуальный язык и продукты. Второй путь ведет к инженерному скелету автоматизации: боты, заявки, каналы, API, сервер и контроль процесса.
+            </p>
+          </div>
+          <div class="entry-gate__choices" aria-label="Выбор маршрута" data-i18n-aria-label="entry.choiceAria">
+            <a class="entry-choice entry-choice--portfolio" href="#hero">
+              <span data-i18n="entry.portfolioMeta">Портфолио / продукты / личность</span>
+              <strong data-i18n="entry.portfolioTitle">Смотреть весь сайт</strong>
+              <p data-i18n="entry.portfolioText">Визуал, еда, видео, одежда, сайты, веб-системы и общий подход VANTRUFREE.</p>
+            </a>
+            <a class="entry-choice entry-choice--automation" href="#automation">
+              <span data-i18n="entry.automationMeta">Боты / сервер / процессы</span>
+              <strong data-i18n="entry.automationTitle">Разобрать автоматизацию</strong>
+              <p data-i18n="entry.automationText">Увидеть базовый скелет системы, которую можно усилить под конкретный бизнес.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section class="hero shell section-observe" id="hero" data-scene="hero">
         <div class="hero__layout">
           <div class="hero__content reveal">
@@ -163,6 +187,21 @@
             Telegram, VK, Google-таблицы, платежи, закрытые каналы, заявки и веб-панели можно собрать в одну понятную цепочку. Ценность не в кнопке бота, а в том, что бизнес меньше делает руками и быстрее видит состояние процесса.
           </p>
         </div>
+
+        <div class="automation-blueprint glass3d reveal">
+          <div class="automation-blueprint__header">
+            <div>
+              <p class="eyebrow" data-i18n="automation.blueprintEyebrow">Базовый скелет</p>
+              <h3 data-i18n="automation.blueprintTitle">Карта любой нормальной автоматизации.</h3>
+            </div>
+            <p data-i18n="automation.blueprintText">
+              Сначала фиксируется процесс, потом строится цепочка входов, логики, данных, интеграций и контроля. Бот появляется внутри этой системы, а не заменяет её.
+            </p>
+          </div>
+          <div class="automation-blueprint__canvas" data-automation-map></div>
+        </div>
+
+        <div class="automation-principles" data-automation-principles></div>
 
         <div class="automation__grid">
           <div class="automation-map glass3d reveal">
@@ -683,6 +722,6 @@
       </div>
     </dialog>
 
-    <script type="module" src="./scripts/main.js?v=11"></script>
+    <script type="module" src="./scripts/main.js?v=12"></script>
   </body>
 </html>

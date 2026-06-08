@@ -24,6 +24,19 @@ export const translations = {
         editorial: "Портреты",
         contact: "Контакт"
       },
+      entry: {
+        eyebrow: "Выберите маршрут",
+        title: "Выбери маршрут: портфолио или системы.",
+        text:
+          "Первый путь показывает портфолио, визуальный язык и продукты. Второй путь ведет к инженерному скелету автоматизации: боты, заявки, каналы, API, сервер и контроль процесса.",
+        choiceAria: "Выбор маршрута по сайту",
+        portfolioMeta: "Портфолио / продукты / личность",
+        portfolioTitle: "Смотреть весь сайт",
+        portfolioText: "Визуал, еда, видео, одежда, сайты, веб-системы и общий подход VANTRUFREE.",
+        automationMeta: "Боты / сервер / процессы",
+        automationTitle: "Разобрать автоматизацию",
+        automationText: "Увидеть базовый скелет системы, которую можно усилить под конкретный бизнес."
+      },
       hero: {
         eyebrow: "Визуальные системы / Контент на основе ИИ / Веб-интерфейсы",
         title:
@@ -63,12 +76,16 @@ export const translations = {
         eyebrow: "Бизнес-автоматизация",
         title: "Не просто бот, а управляемая система вокруг процесса.",
         intro:
-          "Telegram, VK, Google-таблицы, платежи, закрытые каналы, заявки и веб-панели можно собрать в одну понятную цепочку. Ценность не в кнопке бота, а в том, что бизнес меньше делает руками и быстрее видит состояние процесса.",
-        flowLabel: "Как может работать воронка",
-        flowTag: "канал → бот → доступ → учет",
-        noteEyebrow: "Для малого, среднего и крупного бизнеса",
+          "Telegram, WhatsApp, ВКонтакте, сайт, форма, таблицы, платежи, закрытые каналы, заявки и веб-панели можно собрать в одну понятную цепочку. Ценность не в кнопке бота, а в том, что бизнес меньше делает руками и быстрее видит состояние процесса.",
+        blueprintEyebrow: "Базовый скелет",
+        blueprintTitle: "Карта любой нормальной автоматизации.",
+        blueprintText:
+          "Сначала фиксируется процесс, потом строится цепочка входов, логики, данных, интеграций и контроля. Бот появляется внутри этой системы, а не заменяет её.",
+        flowLabel: "Принцип воронки",
+        flowTag: "вход → сценарий → данные → контроль",
+        noteEyebrow: "Основа для разных бизнесов",
         noteTitle:
-          "Такую логику можно адаптировать под продажи, обучение, клубы, сервисы, заявки, склады и внутренние процессы.",
+          "Один и тот же скелет можно докрутить под продажи, сервис, обучение, клуб, канал, заявки, склад, контент-процесс или внутреннюю операционку.",
         cta: "Оставить заявку на систему"
       },
       business: {
@@ -289,39 +306,113 @@ export const translations = {
       automationFlow: [
         {
           step: "01",
-          title: "Вход из канала или рекламы",
-          text: "Человек приходит из Telegram, VK, сайта, QR-кода или рекламного объявления."
+          title: "Сначала разбирается процесс",
+          text: "Что человек делает сейчас, где теряются заявки, где ручная работа, кто должен видеть статус и где нужна логика."
         },
         {
           step: "02",
-          title: "Бот принимает заявку",
-          text: "Бот задает вопросы, показывает кнопки, собирает контакт и ведет пользователя по понятному сценарию."
+          title: "Потом собираются точки входа",
+          text: "Telegram, WhatsApp, ВКонтакте, сайт, форма, QR-код, реклама или канал становятся входами в одну управляемую систему."
         },
         {
           step: "03",
-          title: "Оплата, правила и доступ",
-          text: "Можно подключить платежи, приветствие, правила, проверку статуса и выдачу доступа в закрытый канал."
+          title: "Дальше строится сценарий",
+          text: "Бот или интерфейс задает вопросы, проверяет условия, ведет по веткам, собирает контакт и не даёт заявке провалиться."
         },
         {
           step: "04",
-          title: "Таблица, база и веб-панель",
-          text: "Заявки, статусы, оплаты и действия уходят в Google-таблицу, базу или веб-интерфейс для владельца."
+          title: "Финально подключается контроль",
+          text: "Данные уходят в таблицу, базу, веб-панель или CRM; владелец видит статусы, уведомления, историю и следующие действия."
+        }
+      ],
+      automationMap: [
+        {
+          id: "entry",
+          kicker: "01 / входы",
+          title: "Telegram / WhatsApp / ВКонтакте / сайт / форма",
+          text: "Клиент, сотрудник или подписчик приходит из привычного канала, а не из хаотичной переписки."
+        },
+        {
+          id: "interface",
+          kicker: "02 / интерфейс",
+          title: "Бот, мини-приложение или веб-окно",
+          text: "Внешне всё может выглядеть просто: кнопки, вопросы, выбор услуги, файл, оплата или заявка."
+        },
+        {
+          id: "logic",
+          kicker: "03 / логика",
+          title: "Сценарии, роли, условия и проверки",
+          text: "Именно здесь начинается настоящая автоматизация: ветки, права, статусы, ошибки, ограничения и правила."
+        },
+        {
+          id: "data",
+          kicker: "04 / данные",
+          title: "Таблица, база, CRM или админ-панель",
+          text: "Все действия фиксируются в понятном месте: кто пришёл, что выбрал, какой статус и что делать дальше."
+        },
+        {
+          id: "api",
+          kicker: "05 / интеграции",
+          title: "API, платежи, рассылки, доступы",
+          text: "Система может связываться с внешними сервисами, каналами, оплатой, складом, таблицами и уведомлениями."
+        },
+        {
+          id: "server",
+          kicker: "06 / сервер",
+          title: "VPS, backend, webhooks и безопасность",
+          text: "Надёжная часть, которая принимает события, хранит ключи, обрабатывает ошибки и не зависит от ручного контроля."
+        },
+        {
+          id: "control",
+          kicker: "07 / контроль",
+          title: "Уведомления, отчёты, статусы",
+          text: "Владелец видит не переписку, а состояние процесса: что новое, что оплачено, что зависло и где нужна реакция."
+        },
+        {
+          id: "scale",
+          kicker: "08 / развитие",
+          title: "Система докручивается под бизнес",
+          text: "Базовый скелет остаётся, но сценарии, поля, роли, интеграции и отчёты настраиваются под конкретную задачу."
+        }
+      ],
+      automationPrinciples: [
+        {
+          index: "01",
+          title: "Автоматизация начинается не с бота",
+          text: "Бот — это точка контакта. Система начинается с понимания процесса, ошибок, ролей, данных и нужного результата."
+        },
+        {
+          index: "02",
+          title: "Визуально просто, внутри сложно",
+          text: "Пользователь видит несколько кнопок, но за ними работают сценарии, проверки, записи, уведомления и интеграции."
+        },
+        {
+          index: "03",
+          title: "Скелет можно усиливать",
+          text: "Сначала делается рабочая база. Потом добавляются новые ветки, каналы, API, права доступа, отчёты и панели."
         }
       ],
       automationCases: [
         {
-          title: "NOL",
-          meta: "Telegram-продукт / дисциплина / закрытое сообщество",
+          title: "Каналы и заявки",
+          meta: "точки входа / лиды / обработка",
           text:
-            "Концепция продукта, где основной канал ведет человека в бота, бот объясняет правила, принимает действие, управляет доступом и может фиксировать состояние участника.",
-          points: ["основной канал", "бот-сценарии", "закрытый доступ", "учет действий"]
+            "Человек приходит из канала, рекламы, сайта или формы. Система принимает заявку, задаёт уточняющие вопросы, фиксирует источник и отправляет уведомление.",
+          points: ["Telegram", "WhatsApp", "ВКонтакте", "форма", "уведомления"]
         },
         {
-          title: "Рядом",
-          meta: "Сообщество / правила / вход через бот",
+          title: "Контент и управление",
+          meta: "каналы / контент / расписание",
           text:
-            "Проект с логикой приветствия, правил, кнопок, проверки условий и перехода в закрытое пространство без ручного сопровождения каждого человека.",
-          points: ["приветствие", "правила", "кнопки", "заявки и статусы"]
+            "Можно упростить ведение каналов: заявки на публикации, черновики, статусы, напоминания, согласование и отправку через понятный сценарий.",
+          points: ["черновики", "статусы", "согласование", "расписание"]
+        },
+        {
+          title: "Данные и операционка",
+          meta: "таблицы / API / VPS / контроль",
+          text:
+            "Когда ручная таблица уже не справляется, поверх неё можно собрать веб-слой, подключить API, серверную логику, роли и отчёты.",
+          points: ["таблица", "API", "VPS", "webhooks", "отчёты"]
         }
       ],
       businessCards: [
@@ -743,6 +834,19 @@ export const translations = {
         editorial: "Editorial",
         contact: "Contact"
       },
+      entry: {
+        eyebrow: "Choose a route",
+        title: "Choose the route: portfolio or systems.",
+        text:
+          "The first path shows the portfolio, visual language and products. The second path opens the engineering skeleton of automation: bots, requests, channels, APIs, server logic and process control.",
+        choiceAria: "Site route selection",
+        portfolioMeta: "Portfolio / products / identity",
+        portfolioTitle: "View the full site",
+        portfolioText: "Visuals, food, video, garments, websites, web systems and the VANTRUFREE approach.",
+        automationMeta: "Bots / API / VPS / processes",
+        automationTitle: "Open automation",
+        automationText: "See the base system skeleton that can be adapted to a specific business."
+      },
       hero: {
         eyebrow: "Visual Systems / AI Content / Web Interfaces",
         title:
@@ -782,12 +886,16 @@ export const translations = {
         eyebrow: "Business Automation",
         title: "Not just a bot, but a controlled system around a process.",
         intro:
-          "Telegram, VK, Google Sheets, payments, private channels, requests and web dashboards can become one clear operational chain. The value is not the bot button itself, but the way a business reduces manual work and sees process state faster.",
-        flowLabel: "How the funnel can work",
-        flowTag: "channel → bot → access → tracking",
-        noteEyebrow: "For small, medium and larger businesses",
+          "Telegram, WhatsApp, VK, website forms, sheets, payments, private channels, requests and dashboards can become one clear operational chain. The value is not the bot button itself, but the way a business reduces manual work and sees process state faster.",
+        blueprintEyebrow: "Base skeleton",
+        blueprintTitle: "A map of proper automation.",
+        blueprintText:
+          "First the process is fixed, then the chain of inputs, logic, data, integrations and control is built. The bot appears inside the system; it does not replace it.",
+        flowLabel: "Funnel principle",
+        flowTag: "entry → scenario → data → control",
+        noteEyebrow: "A base for different businesses",
         noteTitle:
-          "This logic can adapt to sales, education, clubs, services, requests, warehouses and internal operations.",
+          "The same skeleton can be adapted to sales, service, education, clubs, channels, requests, warehouses, content processes or internal operations.",
         cta: "Send a system request"
       },
       business: {
@@ -1008,39 +1116,113 @@ export const translations = {
       automationFlow: [
         {
           step: "01",
-          title: "Entry from channel or ads",
-          text: "A person comes from Telegram, VK, a website, QR code or advertising."
+          title: "First, the process is mapped",
+          text: "What people do now, where requests get lost, where manual work appears, who needs the status and where logic is required."
         },
         {
           step: "02",
-          title: "The bot receives the request",
-          text: "The bot asks questions, shows buttons, collects contact details and leads the user through a clear scenario."
+          title: "Then entry points are collected",
+          text: "Telegram, WhatsApp, VK, website, form, QR code, ads or a channel become entry points into one controlled system."
         },
         {
           step: "03",
-          title: "Payment, rules and access",
-          text: "Payments, welcome messages, rules, status checks and private-channel access can be connected."
+          title: "Next, the scenario is built",
+          text: "A bot or interface asks questions, checks conditions, follows branches, collects contact details and prevents the request from disappearing."
         },
         {
           step: "04",
-          title: "Sheet, database and dashboard",
-          text: "Requests, statuses, payments and actions move into Google Sheets, a database or an owner-facing web interface."
+          title: "Finally, control is connected",
+          text: "Data goes into a sheet, database, dashboard or CRM; the owner sees statuses, alerts, history and next actions."
+        }
+      ],
+      automationMap: [
+        {
+          id: "entry",
+          kicker: "01 / entries",
+          title: "Telegram / WhatsApp / VK / website / form",
+          text: "A client, employee or subscriber comes from a familiar channel instead of chaotic messages."
+        },
+        {
+          id: "interface",
+          kicker: "02 / interface",
+          title: "Bot, mini app or web window",
+          text: "From the outside it may look simple: buttons, questions, service choice, file, payment or request."
+        },
+        {
+          id: "logic",
+          kicker: "03 / logic",
+          title: "Scenarios, roles, conditions and checks",
+          text: "This is where real automation starts: branches, permissions, statuses, errors, limits and rules."
+        },
+        {
+          id: "data",
+          kicker: "04 / data",
+          title: "Sheet, database, CRM or admin panel",
+          text: "Every action is stored clearly: who came in, what they selected, the status and the next action."
+        },
+        {
+          id: "api",
+          kicker: "05 / integrations",
+          title: "API, payments, mailouts, access",
+          text: "The system can connect to external services, channels, payments, warehouse data, sheets and notifications."
+        },
+        {
+          id: "server",
+          kicker: "06 / server",
+          title: "VPS, backend, webhooks and security",
+          text: "The reliable layer that receives events, stores keys, handles errors and does not depend on manual control."
+        },
+        {
+          id: "control",
+          kicker: "07 / control",
+          title: "Notifications, reports, statuses",
+          text: "The owner sees the process state: what is new, what is paid, what is stuck and where action is needed."
+        },
+        {
+          id: "scale",
+          kicker: "08 / growth",
+          title: "The system evolves around the business",
+          text: "The base skeleton remains, while scenarios, fields, roles, integrations and reports are shaped around the task."
+        }
+      ],
+      automationPrinciples: [
+        {
+          index: "01",
+          title: "Automation does not start with a bot",
+          text: "A bot is a contact point. The system starts with the process, errors, roles, data and desired result."
+        },
+        {
+          index: "02",
+          title: "Simple outside, complex inside",
+          text: "The user sees a few buttons, while scenarios, checks, records, notifications and integrations work behind them."
+        },
+        {
+          index: "03",
+          title: "The skeleton can be extended",
+          text: "First, a working base is built. Then new branches, channels, APIs, permissions, reports and panels are added."
         }
       ],
       automationCases: [
         {
-          title: "NOL",
-          meta: "Telegram product / discipline / private community",
+          title: "Channels and requests",
+          meta: "entry points / leads / processing",
           text:
-            "A product concept where the main channel leads into a bot, the bot explains rules, receives actions, manages access and can track participant state.",
-          points: ["main channel", "bot scenarios", "private access", "action tracking"]
+            "A person comes from a channel, ad, website or form. The system receives the request, asks clarifying questions, records the source and sends a notification.",
+          points: ["Telegram", "WhatsApp", "VK", "form", "notifications"]
         },
         {
-          title: "Ryadom",
-          meta: "Community / rules / bot-based entry",
+          title: "Content and management",
+          meta: "channels / content / schedule",
           text:
-            "A project with welcome logic, rules, buttons, condition checks and transition into a private space without manually guiding every person.",
-          points: ["welcome flow", "rules", "buttons", "requests and statuses"]
+            "Channel work can be simplified: publication requests, drafts, statuses, reminders, approval and sending through a clear scenario.",
+          points: ["drafts", "statuses", "approval", "schedule"]
+        },
+        {
+          title: "Data and operations",
+          meta: "sheets / API / VPS / control",
+          text:
+            "When a manual sheet is no longer enough, a web layer, API, server logic, roles and reports can be built on top of it.",
+          points: ["sheet", "API", "VPS", "webhooks", "reports"]
         }
       ],
       businessCards: [

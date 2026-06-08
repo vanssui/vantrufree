@@ -1,3 +1,161 @@
+.entry-gate {
+  min-height: calc(100svh - 80px);
+  display: grid;
+  align-items: center;
+  padding-top: clamp(38px, 5vw, 72px);
+}
+
+.entry-gate__panel {
+  --filter-glass3d: blur(20px) brightness(0.78) saturate(1.8);
+  --color-glass3d: hsl(28 30% 55% / 0.04);
+
+  grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr);
+  align-items: stretch;
+  gap: clamp(22px, 4vw, 56px);
+  padding: clamp(24px, 5vw, 54px);
+  border-radius: clamp(30px, 5vw, 56px);
+  border: 1px solid rgba(220, 191, 139, 0.13);
+  background:
+    linear-gradient(112deg, rgba(200, 63, 56, 0.14), transparent 32%),
+    linear-gradient(138deg, transparent 0 44%, rgba(220, 191, 139, 0.09) 44.2%, transparent 45.4% 100%),
+    linear-gradient(24deg, transparent 0 58%, rgba(255, 255, 255, 0.055) 58.2%, transparent 59% 100%),
+    radial-gradient(circle at 72% 16%, rgba(220, 191, 139, 0.1), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.016));
+  box-shadow: 0 34px 110px rgba(0, 0, 0, 0.4);
+}
+
+.entry-gate__copy {
+  display: grid;
+  align-content: center;
+}
+
+.entry-gate__copy h1 {
+  margin: 0;
+  max-width: 13ch;
+  font-family: var(--font-display);
+  font-size: clamp(2.45rem, 5.3vw, 5.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.entry-gate__copy p:not(.eyebrow) {
+  max-width: 58ch;
+  margin: 22px 0 0;
+  color: var(--muted-strong);
+  font-size: 1.05rem;
+}
+
+.entry-gate__choices {
+  display: grid;
+  gap: 18px;
+}
+
+.entry-choice {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 232px;
+  display: grid;
+  align-content: end;
+  gap: 12px;
+  padding: clamp(22px, 3vw, 30px);
+  border-radius: 30px;
+  border: 1px solid rgba(220, 191, 139, 0.15);
+  background:
+    linear-gradient(140deg, rgba(255, 255, 255, 0.06), transparent 40%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.018));
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+  transition:
+    transform 0.34s ease,
+    border-color 0.34s ease,
+    box-shadow 0.34s ease;
+}
+
+.entry-choice::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(112deg, transparent 0 36%, rgba(255, 255, 255, 0.16) 48%, transparent 62%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 72px);
+  opacity: 0.5;
+  transform: translateX(-24%);
+  transition: transform 0.65s ease, opacity 0.34s ease;
+}
+
+.entry-choice::after {
+  content: "↗";
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(220, 191, 139, 0.25);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(246, 224, 184, 0.92);
+  font-size: 1.06rem;
+  transform: translate(-4px, 4px);
+  transition:
+    transform 0.34s ease,
+    background-color 0.34s ease,
+    border-color 0.34s ease;
+}
+
+.entry-choice--automation {
+  background:
+    radial-gradient(circle at 78% 22%, rgba(220, 191, 139, 0.16), transparent 30%),
+    linear-gradient(135deg, rgba(200, 63, 56, 0.16), rgba(195, 164, 109, 0.08)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.052), rgba(255, 255, 255, 0.018));
+}
+
+.entry-choice:hover,
+.entry-choice:focus-visible {
+  transform: translateY(-6px);
+  border-color: rgba(220, 191, 139, 0.42);
+  box-shadow: 0 34px 96px rgba(0, 0, 0, 0.38);
+  outline: none;
+}
+
+.entry-choice:hover::before,
+.entry-choice:focus-visible::before {
+  opacity: 0.85;
+  transform: translateX(22%);
+}
+
+.entry-choice:hover::after,
+.entry-choice:focus-visible::after {
+  transform: translate(0, 0);
+  border-color: rgba(220, 191, 139, 0.56);
+  background: rgba(195, 164, 109, 0.16);
+}
+
+.entry-choice span {
+  color: var(--muted);
+  font-size: 0.76rem;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.entry-choice strong {
+  display: block;
+  max-width: 15ch;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+}
+
+.entry-choice p {
+  max-width: 42ch;
+  margin: 0;
+  color: var(--muted-strong);
+}
+
 .hero__content h1 {
   margin: 0;
   max-width: 12ch;
@@ -18,8 +176,13 @@
 }
 
 body[data-read-mode="short"] .hero__lede,
+body[data-read-mode="short"] .entry-gate__copy p:not(.eyebrow),
+body[data-read-mode="short"] .entry-choice p,
 body[data-read-mode="short"] .section-intro,
 body[data-read-mode="short"] .business-card p,
+body[data-read-mode="short"] .automation-blueprint__header > p,
+body[data-read-mode="short"] .automation-node p,
+body[data-read-mode="short"] .automation-principle p,
 body[data-read-mode="short"] .automation-step p,
 body[data-read-mode="short"] .automation-case p,
 body[data-read-mode="short"] .manifest__copy > p:first-of-type,
@@ -121,6 +284,223 @@ body[data-read-mode="short"] .restaurant-faq__card p {
 .automation__grid {
   grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
   align-items: stretch;
+}
+
+.automation-blueprint {
+  --filter-glass3d: blur(20px) brightness(0.78) saturate(1.7);
+  --color-glass3d: hsl(30 25% 58% / 0.038);
+
+  margin-bottom: 28px;
+  padding: clamp(24px, 4vw, 42px);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(220, 191, 139, 0.13);
+  background:
+    radial-gradient(circle at 82% 18%, rgba(220, 191, 139, 0.12), transparent 30%),
+    linear-gradient(120deg, rgba(200, 63, 56, 0.08), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.014));
+  box-shadow: var(--shadow);
+}
+
+.automation-blueprint__header {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.62fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: end;
+  margin-bottom: clamp(24px, 4vw, 38px);
+}
+
+.automation-blueprint__header h3 {
+  margin: 0;
+  max-width: 15ch;
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4.5vw, 4.35rem);
+  line-height: 1;
+  letter-spacing: -0.028em;
+}
+
+.automation-blueprint__header > p {
+  max-width: 52ch;
+  margin: 0;
+  color: var(--muted-strong);
+  font-size: 1.02rem;
+}
+
+.automation-blueprint__canvas {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-areas:
+    "entry entry logic api"
+    "interface data data server"
+    "control control scale scale";
+  gap: 16px;
+  min-height: 600px;
+  padding: clamp(18px, 3vw, 28px);
+  border-radius: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 50% 48%, rgba(220, 191, 139, 0.11), transparent 30%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01));
+  background-size: 92px 92px, 92px 92px, auto, auto;
+}
+
+.automation-blueprint__canvas::before,
+.automation-blueprint__canvas::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.automation-blueprint__canvas::before {
+  background:
+    linear-gradient(90deg, transparent 0 8%, rgba(220, 191, 139, 0.26) 8.1% 8.25%, transparent 8.35% 100%),
+    linear-gradient(90deg, transparent 0 26%, rgba(220, 191, 139, 0.18) 26.1% 26.22%, transparent 26.32% 100%),
+    linear-gradient(90deg, transparent 0 50%, rgba(220, 191, 139, 0.28) 50.1% 50.24%, transparent 50.34% 100%),
+    linear-gradient(90deg, transparent 0 74%, rgba(220, 191, 139, 0.18) 74.1% 74.22%, transparent 74.32% 100%),
+    linear-gradient(180deg, transparent 0 24%, rgba(220, 191, 139, 0.2) 24.1% 24.22%, transparent 24.34% 100%),
+    linear-gradient(180deg, transparent 0 50%, rgba(220, 191, 139, 0.26) 50.1% 50.24%, transparent 50.34% 100%),
+    linear-gradient(180deg, transparent 0 76%, rgba(220, 191, 139, 0.18) 76.1% 76.22%, transparent 76.34% 100%);
+  opacity: 0.46;
+  mask-image: radial-gradient(circle at center, #000 0 58%, transparent 78%);
+}
+
+.automation-blueprint__canvas::after {
+  background:
+    linear-gradient(128deg, transparent 0 34%, rgba(255, 255, 255, 0.08) 34.2%, transparent 35% 100%),
+    linear-gradient(38deg, transparent 0 58%, rgba(220, 191, 139, 0.12) 58.1%, transparent 58.8% 100%);
+  mix-blend-mode: screen;
+  opacity: 0.5;
+}
+
+.automation-node {
+  position: relative;
+  z-index: 1;
+  min-height: 160px;
+  display: grid;
+  align-content: space-between;
+  gap: 14px;
+  padding: 20px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.085);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.065), transparent 42%),
+    rgba(8, 8, 8, 0.46);
+  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.28);
+  transition:
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    background-color 0.28s ease;
+}
+
+.automation-node:hover {
+  transform: translateY(-4px);
+  border-color: rgba(220, 191, 139, 0.32);
+}
+
+.automation-node--entry {
+  grid-area: entry;
+}
+
+.automation-node--interface {
+  grid-area: interface;
+}
+
+.automation-node--logic {
+  grid-area: logic;
+}
+
+.automation-node--data {
+  grid-area: data;
+  min-height: 210px;
+  border-color: rgba(220, 191, 139, 0.28);
+  background:
+    radial-gradient(circle at 76% 18%, rgba(220, 191, 139, 0.18), transparent 32%),
+    linear-gradient(135deg, rgba(200, 63, 56, 0.12), rgba(255, 255, 255, 0.035)),
+    rgba(10, 10, 10, 0.58);
+}
+
+.automation-node--api {
+  grid-area: api;
+}
+
+.automation-node--server {
+  grid-area: server;
+}
+
+.automation-node--control {
+  grid-area: control;
+}
+
+.automation-node--scale {
+  grid-area: scale;
+}
+
+.automation-node span {
+  color: rgba(220, 191, 139, 0.86);
+  font-size: 0.72rem;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.automation-node h3 {
+  margin: 0;
+  max-width: 18ch;
+  font-size: clamp(1.02rem, 1.45vw, 1.38rem);
+  line-height: 1.16;
+}
+
+.automation-node p {
+  margin: 0;
+  color: var(--muted-strong);
+  font-size: 0.93rem;
+}
+
+.automation-principles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 0 0 32px;
+}
+
+.automation-principle {
+  --filter-glass3d: blur(18px) brightness(0.84) saturate(1.8);
+  --color-glass3d: hsl(0 0% 100% / 0.035);
+
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background:
+    linear-gradient(140deg, rgba(220, 191, 139, 0.08), transparent 40%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.016));
+  box-shadow: var(--shadow);
+}
+
+.automation-principle span {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: rgba(195, 164, 109, 0.11);
+  color: var(--accent-gold);
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+}
+
+.automation-principle h3 {
+  margin: 0;
+  font-size: 1.16rem;
+  line-height: 1.2;
+}
+
+.automation-principle p {
+  margin: 10px 0 0;
+  color: var(--muted-strong);
 }
 
 .automation-map,
@@ -1600,6 +1980,44 @@ body[data-read-mode="short"] .restaurant-faq__card p {
 }
 
 @media (max-width: 1080px) {
+  .entry-gate {
+    min-height: auto;
+  }
+
+  .entry-gate__panel {
+    grid-template-columns: 1fr;
+  }
+
+  .entry-gate__copy h1 {
+    max-width: none;
+  }
+
+  .entry-gate__choices {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .automation-blueprint__header {
+    grid-template-columns: 1fr;
+  }
+
+  .automation-blueprint__header h3 {
+    max-width: none;
+  }
+
+  .automation-blueprint__canvas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "entry logic"
+      "interface data"
+      "api server"
+      "control scale";
+    min-height: unset;
+  }
+
+  .automation-principles {
+    grid-template-columns: 1fr;
+  }
+
   .hero__content {
     order: 1;
   }
@@ -1675,6 +2093,40 @@ body[data-read-mode="short"] .restaurant-faq__card p {
     font-size: clamp(2.1rem, 12vw, 3.35rem);
   }
 
+  .entry-gate__panel {
+    padding: 22px;
+    border-radius: 30px;
+  }
+
+  .entry-gate__copy h1 {
+    font-size: clamp(2.05rem, 10vw, 3.2rem);
+  }
+
+  .entry-gate__choices,
+  .automation-blueprint__canvas {
+    grid-template-columns: 1fr;
+  }
+
+  .automation-blueprint__canvas {
+    grid-template-areas:
+      "entry"
+      "interface"
+      "logic"
+      "data"
+      "api"
+      "server"
+      "control"
+      "scale";
+    gap: 12px;
+    padding: 14px;
+    border-radius: 24px;
+  }
+
+  .automation-node,
+  .automation-node--data {
+    min-height: unset;
+  }
+
   .hero__visual {
     min-height: 440px;
   }
@@ -1716,6 +2168,8 @@ body[data-read-mode="short"] .restaurant-faq__card p {
 
   .manifest__copy,
   .automation-map,
+  .automation-blueprint,
+  .automation-principle,
   .automation-case,
   .automation-note,
   .food__copy,
@@ -1731,6 +2185,7 @@ body[data-read-mode="short"] .restaurant-faq__card p {
 
   .business-card,
   .automation-step,
+  .automation-node,
   .discipline-card,
   .case-card,
   .workflow-card,
@@ -1804,6 +2259,28 @@ body[data-read-mode="short"] .restaurant-faq__card p {
 }
 
 @media (max-width: 560px) {
+  .entry-gate {
+    padding-top: 24px;
+  }
+
+  .entry-choice {
+    min-height: 188px;
+    border-radius: 24px;
+  }
+
+  .entry-choice strong {
+    font-size: clamp(1.7rem, 8.4vw, 2.45rem);
+  }
+
+  .entry-choice::after {
+    width: 40px;
+    height: 40px;
+  }
+
+  .automation-blueprint__header h3 {
+    font-size: clamp(1.82rem, 9.4vw, 2.7rem);
+  }
+
   .hero__content h1 {
     max-width: 11ch;
     font-size: clamp(1.92rem, 11.2vw, 2.9rem);
@@ -1812,6 +2289,8 @@ body[data-read-mode="short"] .restaurant-faq__card p {
 
   .hero__lede,
   .automation-step p,
+  .automation-node p,
+  .automation-principle p,
   .automation-case p,
   .automation-note p,
   .manifest__copy p,
@@ -1880,6 +2359,8 @@ body[data-read-mode="short"] .restaurant-faq__card p {
 
   .manifest__copy,
   .automation-map,
+  .automation-blueprint,
+  .automation-principle,
   .automation-case,
   .automation-note,
   .food__copy,
@@ -1896,6 +2377,7 @@ body[data-read-mode="short"] .restaurant-faq__card p {
 
   .business-card,
   .automation-step,
+  .automation-node,
   .discipline-card,
   .case-card,
   .workflow-card,
