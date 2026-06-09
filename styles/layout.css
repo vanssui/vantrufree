@@ -190,6 +190,33 @@
   padding-bottom: max(108px, 56vh);
 }
 
+body[data-site-view="start"] main > section:not(.entry-gate),
+body[data-site-view="start"] .footer,
+body[data-site-view="portfolio"] .entry-gate {
+  display: none;
+}
+
+body[data-site-view="automation"] .entry-gate,
+body[data-site-view="automation"] .hero,
+body[data-site-view="automation"] .site-route,
+body[data-site-view="automation"] .business,
+body[data-site-view="automation"] .manifest,
+body[data-site-view="automation"] .disciplines,
+body[data-site-view="automation"] .cases,
+body[data-site-view="automation"] .systems,
+body[data-site-view="automation"] .video,
+body[data-site-view="automation"] .food,
+body[data-site-view="automation"] .restaurant-economics,
+body[data-site-view="automation"] .campaign,
+body[data-site-view="automation"] .garments,
+body[data-site-view="automation"] .editorial {
+  display: none;
+}
+
+body[data-site-view="automation"] .automation {
+  padding-top: clamp(84px, 9vw, 132px);
+}
+
 .hero {
   padding-top: 64px;
   min-height: calc(100vh - 72px);

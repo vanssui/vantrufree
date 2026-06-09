@@ -416,7 +416,7 @@ main {
     radial-gradient(circle at 16% 12%, rgba(200, 63, 56, 0.15), transparent 24%),
     radial-gradient(circle at 82% 20%, rgba(195, 164, 109, 0.1), transparent 28%),
     linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.58));
-  transition: background 0.7s ease;
+  transition: opacity 0.45s ease;
 }
 
 .ambient__glow {
@@ -532,6 +532,9 @@ body[data-scene="matrix"] .ambient__grid {
 
   .reveal,
   .button,
+  .entry-choice,
+  .site-route__card,
+  .garments__panel,
   .ambient__glow,
   .ambient__mesh {
     transition: none;

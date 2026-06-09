@@ -18,11 +18,11 @@
     <meta name="apple-mobile-web-app-title" content="VANTRUFREE" />
     <meta name="application-name" content="VANTRUFREE" />
     <meta name="theme-color" content="#090909" />
-    <link rel="stylesheet" href="./styles/base.css?v=12" />
-    <link rel="stylesheet" href="./styles/layout.css?v=12" />
-    <link rel="stylesheet" href="./styles/sections.css?v=12" />
+    <link rel="stylesheet" href="./styles/base.css?v=14" />
+    <link rel="stylesheet" href="./styles/layout.css?v=14" />
+    <link rel="stylesheet" href="./styles/sections.css?v=14" />
   </head>
-  <body class="is-preloading" data-scene="hero" data-read-mode="full">
+  <body class="is-preloading" data-scene="hero" data-read-mode="full" data-site-view="start">
     <div class="site-preloader" data-preloader aria-hidden="true">
       <div class="site-preloader__inner">
         <svg class="site-preloader__mark" viewBox="0 0 1024 1024" fill="none" aria-hidden="true">
@@ -45,7 +45,7 @@
 
     <header class="topbar glass3d">
       <div class="shell topbar__inner">
-        <a class="brand" href="#hero" aria-label="VANTRUFREE главная" data-i18n-aria-label="brandHomeAria">
+        <a class="brand" href="#hero" data-site-view="portfolio" aria-label="VANTRUFREE главная" data-i18n-aria-label="brandHomeAria">
           <span class="brand__mark" aria-hidden="true">
             <img src="./assets/images/vtf-logo.svg" alt="" />
           </span>
@@ -73,7 +73,7 @@
           </div>
 
           <nav class="site-nav" id="site-nav" aria-label="Основная навигация" data-i18n-aria-label="navAria">
-            <a href="#automation" data-i18n="nav.automation">Автоматизация</a>
+            <a href="#automation" data-site-view="automation" data-i18n="nav.automation">Автоматизация</a>
             <a href="#cases" data-i18n="nav.cases">Проекты</a>
             <a href="#systems" data-i18n="nav.systems">Системы</a>
             <a href="#video" data-i18n="nav.video">Видео</a>
@@ -94,12 +94,12 @@
             </p>
           </div>
           <div class="entry-gate__choices" aria-label="Выбор маршрута" data-i18n-aria-label="entry.choiceAria">
-            <a class="entry-choice entry-choice--portfolio" href="#hero">
+            <a class="entry-choice entry-choice--portfolio" href="#hero" data-site-view="portfolio">
               <span data-i18n="entry.portfolioMeta">Портфолио / продукты / личность</span>
               <strong data-i18n="entry.portfolioTitle">Смотреть весь сайт</strong>
               <p data-i18n="entry.portfolioText">Визуал, еда, видео, одежда, сайты, веб-системы и общий подход VANTRUFREE.</p>
             </a>
-            <a class="entry-choice entry-choice--automation" href="#automation">
+            <a class="entry-choice entry-choice--automation" href="#automation" data-site-view="automation">
               <span data-i18n="entry.automationMeta">Боты / сервер / процессы</span>
               <strong data-i18n="entry.automationTitle">Разобрать автоматизацию</strong>
               <p data-i18n="entry.automationText">Увидеть базовый скелет системы, которую можно усилить под конкретный бизнес.</p>
@@ -119,9 +119,9 @@
               От брендовых роликов и ресторанного визуала до сайтов и веб-версий Google-таблиц: я усиливаю упаковку, ускоряю создание контента и перевожу хаотичные процессы в понятный рабочий продукт.
             </p>
             <div class="hero__actions">
-              <a class="button button--primary" href="#automation" data-i18n="hero.primaryCta">Разобрать бизнес-системы</a>
+              <a class="button button--primary" href="#automation" data-site-view="automation" data-i18n="hero.primaryCta">Разобрать бизнес-системы</a>
               <a class="button button--ghost" href="#editorial" data-i18n="hero.editorialCta">Открыть портретную подборку</a>
-              <a class="button button--ghost button--route" href="#site-route" data-i18n="hero.routeCta">Понять структуру сайта</a>
+              <a class="button button--ghost button--route" href="#site-route" data-site-view="portfolio" data-i18n="hero.routeCta">Быстрый маршрут</a>
             </div>
           </div>
 
@@ -148,10 +148,10 @@
 
       <section class="site-route shell section-observe" id="site-route" data-scene="hero">
         <div class="site-route__intro reveal">
-          <p class="eyebrow" data-i18n="route.eyebrow">Маршрут по сайту</p>
-          <h2 data-i18n="route.title">Если времени мало, двигайтесь по четырём главным частям.</h2>
+          <p class="eyebrow" data-i18n="route.eyebrow">Быстрый маршрут</p>
+          <h2 data-i18n="route.title">Если времени мало, начните с самого важного.</h2>
           <p data-i18n="route.text">
-            Сайт устроен не как одна бесконечная лента, а как несколько смысловых блоков: кто я, какой визуальный язык собираю, какие рабочие системы делаю и как оставить заявку.
+            Можно быстро пройти по ключевым частям: подход, визуальный язык, проекты и заявка. Каждая карточка ведёт к конкретному разделу.
           </p>
         </div>
 
@@ -160,21 +160,25 @@
             <span data-i18n="route.itemOneIndex">01</span>
             <strong data-i18n="route.itemOneTitle">Познакомиться с подходом</strong>
             <p data-i18n="route.itemOneText">Манифест, системное мышление и почему ИИ для меня рабочий инструмент.</p>
+            <em data-i18n="route.itemCta">Перейти</em>
           </a>
           <a class="site-route__card glass3d reveal reveal-delay" href="#garments">
             <span data-i18n="route.itemTwoIndex">02</span>
             <strong data-i18n="route.itemTwoTitle">Увидеть визуальный язык</strong>
             <p data-i18n="route.itemTwoText">Одежда, кампании, портреты, видео и ресторанный визуал.</p>
+            <em data-i18n="route.itemCta">Перейти</em>
           </a>
           <a class="site-route__card glass3d reveal reveal-delay" href="#cases">
             <span data-i18n="route.itemThreeIndex">03</span>
             <strong data-i18n="route.itemThreeTitle">Разобрать проекты</strong>
             <p data-i18n="route.itemThreeText">Трекер, складские системы и веб-версии таблиц.</p>
+            <em data-i18n="route.itemCta">Перейти</em>
           </a>
-          <a class="site-route__card site-route__card--action glass3d reveal reveal-delay" href="#lead">
+          <a class="site-route__card site-route__card--action glass3d reveal reveal-delay" href="#lead" data-site-view="portfolio">
             <span data-i18n="route.itemFourIndex">04</span>
             <strong data-i18n="route.itemFourTitle">Оставить заявку</strong>
             <p data-i18n="route.itemFourText">Сразу перейти к форме, если уже понятно, что нужно обсудить.</p>
+            <em data-i18n="route.itemCta">Перейти</em>
           </a>
         </div>
       </section>
@@ -220,7 +224,7 @@
             <p class="eyebrow" data-i18n="automation.noteEyebrow">Для малого, среднего и крупного бизнеса</p>
             <h3 data-i18n="automation.noteTitle">Такую логику можно адаптировать под продажи, обучение, клубы, сервисы, заявки, склады и внутренние процессы.</h3>
           </div>
-          <a class="button button--primary" href="#lead" data-i18n="automation.cta">Оставить заявку на систему</a>
+          <a class="button button--primary" href="#lead" data-site-view="automation" data-i18n="automation.cta">Оставить заявку на систему</a>
         </div>
       </section>
 
@@ -722,6 +726,6 @@
       </div>
     </dialog>
 
-    <script type="module" src="./scripts/main.js?v=12"></script>
+    <script type="module" src="./scripts/main.js?v=14"></script>
   </body>
 </html>

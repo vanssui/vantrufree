@@ -1,11 +1,13 @@
-import { translations } from "../data/content.js?v=12";
+import { translations } from "../data/content.js?v=14";
 
 const defaultLanguage = "ru";
 const storageKey = "vtf-language";
 const readModeKey = "vtf-read-mode";
+const siteViewKey = "vtf-site-view";
 const telegramRequestUrl = "https://t.me/wuvan";
 let currentLanguage = localStorage.getItem(storageKey) || defaultLanguage;
 let currentReadMode = localStorage.getItem(readModeKey) || "full";
+let currentSiteView = "start";
 
 const renderList = (selector, items, template) => {
   const node = document.querySelector(selector);
@@ -29,6 +31,26 @@ const setReadMode = (mode) => {
   localStorage.setItem(readModeKey, currentReadMode);
   document.body.dataset.readMode = currentReadMode;
   updateReadModeButtons();
+};
+
+const setSiteView = (view) => {
+  currentSiteView = ["portfolio", "automation"].includes(view) ? view : "start";
+  document.body.dataset.siteView = currentSiteView;
+
+  if (currentSiteView === "start") {
+    sessionStorage.removeItem(siteViewKey);
+  } else {
+    sessionStorage.setItem(siteViewKey, currentSiteView);
+  }
+};
+
+const getViewForHash = (hash) => {
+  if (hash === "#automation") return "automation";
+  if (hash === "#start" || !hash) return "start";
+  if (hash === "#lead" || hash === "#contact") {
+    return currentSiteView === "automation" ? "automation" : "portfolio";
+  }
+  return "portfolio";
 };
 
 const openExternalLink = (href) => {
@@ -655,14 +677,20 @@ document.addEventListener("click", (event) => {
   const hash = link.getAttribute("href");
   if (!hash || hash === "#") return;
 
+  const requestedView = link.dataset.siteView || getViewForHash(hash);
+  setSiteView(requestedView);
+
   const target = document.querySelector(hash);
   if (!target) return;
 
   event.preventDefault();
-  const headerOffset = window.matchMedia("(max-width: 700px)").matches ? 92 : 104;
-  const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
   history.pushState(null, "", hash);
-  window.scrollTo({ top: Math.max(top, 0), behavior: "smooth" });
+
+  requestAnimationFrame(() => {
+    const headerOffset = window.matchMedia("(max-width: 700px)").matches ? 92 : 104;
+    const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+    window.scrollTo({ top: Math.max(top, 0), behavior: prefersReducedMotion ? "auto" : "smooth" });
+  });
 });
 
 document.addEventListener("click", (event) => {
@@ -679,11 +707,33 @@ document.addEventListener("click", (event) => {
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const preloader = document.querySelector("[data-preloader]");
 
-if (!prefersReducedMotion) {
-  window.addEventListener("pointermove", (event) => {
-    document.documentElement.style.setProperty("--cursor-x", `${event.clientX}px`);
-    document.documentElement.style.setProperty("--cursor-y", `${event.clientY}px`);
-  });
+setSiteView(window.location.hash ? getViewForHash(window.location.hash) : "start");
+
+window.addEventListener("hashchange", () => {
+  setSiteView(window.location.hash ? getViewForHash(window.location.hash) : "start");
+});
+
+if (!prefersReducedMotion && window.matchMedia("(pointer: fine)").matches) {
+  let cursorFrame = 0;
+  let nextCursorX = window.innerWidth / 2;
+  let nextCursorY = window.innerHeight * 0.2;
+
+  window.addEventListener(
+    "pointermove",
+    (event) => {
+      nextCursorX = event.clientX;
+      nextCursorY = event.clientY;
+
+      if (cursorFrame) return;
+
+      cursorFrame = window.requestAnimationFrame(() => {
+        document.documentElement.style.setProperty("--cursor-x", `${nextCursorX}px`);
+        document.documentElement.style.setProperty("--cursor-y", `${nextCursorY}px`);
+        cursorFrame = 0;
+      });
+    },
+    { passive: true }
+  );
 }
 
 const bindDialog = (dialogSelector, openerSelector, closerSelector) => {

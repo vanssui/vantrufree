@@ -45,7 +45,7 @@ export const translations = {
           "От брендовых роликов и ресторанного визуала до сайтов и веб-версий Google-таблиц: я усиливаю упаковку, ускоряю создание контента и перевожу хаотичные процессы в понятный рабочий продукт.",
         primaryCta: "Разобрать бизнес-системы",
         editorialCta: "Открыть портретную подборку",
-        routeCta: "Понять структуру сайта",
+        routeCta: "Быстрый маршрут",
         imageAlt: "Портрет VANTRUFREE с красным кинематографичным светом",
         captionPrimary: "Авторское присутствие",
         captionSecondary: "Кинематографично / Премиально / Собрано",
@@ -55,10 +55,11 @@ export const translations = {
         floatWebValue: "Таблицы, превращённые в интерфейсы"
       },
       route: {
-        eyebrow: "Маршрут по сайту",
-        title: "Если времени мало, двигайтесь по четырём главным частям.",
+        eyebrow: "Быстрый маршрут",
+        title: "Если времени мало, начните с самого важного.",
         text:
-          "Сайт устроен не как одна бесконечная лента, а как несколько смысловых блоков: кто я, какой визуальный язык собираю, какие рабочие системы делаю и как оставить заявку.",
+          "Можно быстро пройти по ключевым частям: подход, визуальный язык, проекты и заявка. Каждая карточка ведёт к конкретному разделу.",
+        itemCta: "Перейти",
         itemOneIndex: "01",
         itemOneTitle: "Познакомиться с подходом",
         itemOneText: "Манифест, системное мышление и почему ИИ для меня рабочий инструмент.",
@@ -855,7 +856,7 @@ export const translations = {
           "From brand visuals and food content to websites and Google Sheets web layers: I strengthen presentation, speed up production and turn chaotic processes into clear working products.",
         primaryCta: "Explore Business Systems",
         editorialCta: "Enter Editorial Selection",
-        routeCta: "See Site Structure",
+        routeCta: "Quick Route",
         imageAlt: "VANTRUFREE portrait with red cinematic lighting",
         captionPrimary: "Author Presence",
         captionSecondary: "Cinematic / Premium / Controlled",
@@ -865,10 +866,11 @@ export const translations = {
         floatWebValue: "Sheets into interfaces"
       },
       route: {
-        eyebrow: "Site Route",
-        title: "If time is limited, move through the four core parts.",
+        eyebrow: "Quick Route",
+        title: "If time is limited, start with the essentials.",
         text:
-          "The site is not meant to feel like one endless feed. It is split into clear parts: who I am, what visual language I build, what working systems I create and how to send a request.",
+          "Move through the core parts quickly: approach, visual language, projects and request. Each card opens a specific section.",
+        itemCta: "Open",
         itemOneIndex: "01",
         itemOneTitle: "Understand the approach",
         itemOneText: "Manifest, systems thinking and why AI is a working instrument for me.",
