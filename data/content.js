@@ -58,7 +58,7 @@ export const translations = {
         eyebrow: "Быстрый маршрут",
         title: "Если времени мало, начните с самого важного.",
         text:
-          "Можно быстро пройти по ключевым частям: подход, визуальный язык, проекты и заявка. Каждая карточка ведёт к конкретному разделу.",
+          "Можно быстро пройти по ключевым частям: подход, визуальный язык, проекты и контакты. Каждая карточка ведёт к конкретному разделу.",
         itemCta: "Перейти",
         itemOneIndex: "01",
         itemOneTitle: "Познакомиться с подходом",
@@ -70,8 +70,8 @@ export const translations = {
         itemThreeTitle: "Разобрать проекты",
         itemThreeText: "Трекер, складские системы и веб-версии таблиц.",
         itemFourIndex: "04",
-        itemFourTitle: "Оставить заявку",
-        itemFourText: "Сразу перейти к форме, если уже понятно, что нужно обсудить."
+        itemFourTitle: "Связаться напрямую",
+        itemFourText: "Telegram, Instagram и почта без формы и сбора данных."
       },
       automation: {
         eyebrow: "Бизнес-автоматизация",
@@ -87,7 +87,7 @@ export const translations = {
         noteEyebrow: "Основа для разных бизнесов",
         noteTitle:
           "Один и тот же скелет можно докрутить под продажи, сервис, обучение, клуб, канал, заявки, склад, контент-процесс или внутреннюю операционку.",
-        cta: "Оставить заявку на систему"
+        cta: "Обсудить систему напрямую"
       },
       business: {
         eyebrow: "Что я делаю",
@@ -235,35 +235,6 @@ export const translations = {
           "Лучше всего я подхожу ресторанам, брендам, музыкальным артистам, основателям и командам, которым нужен более сильный визуальный язык, более осмысленное портфолио, премиальная посадочная страница или отдельный веб-слой поверх хаотичных операционных данных.",
         primaryCta: "Написать в Telegram",
         secondaryCta: "Посмотреть видео-работы"
-      },
-      lead: {
-        formAria: "Заявка на проект",
-        eyebrow: "Заявка",
-        title: "Коротко опишите задачу, и я вернусь с первым разбором.",
-        nameLabel: "Имя",
-        namePlaceholder: "Как к вам обращаться",
-        contactLabel: "Telegram или телефон",
-        contactPlaceholder: "@username или номер",
-        taskLabel: "Что нужно",
-        taskPlaceholder: "Выберите направление",
-        taskAutomation: "Автоматизация / бот / заявки",
-        taskWeb: "Сайт / веб-интерфейс / таблицы",
-        taskVisual: "Визуал / видео / контент",
-        taskAudit: "Разбор идеи или процесса",
-        messageLabel: "Коротко о задаче",
-        messagePlaceholder: "Что есть сейчас, что нужно автоматизировать или улучшить",
-        submit: "Отправить заявку",
-        hint:
-          "Форма отправляет заявку напрямую в Telegram. Если сервер временно недоступен, откроется готовое сообщение для ручной отправки.",
-        sending: "Отправляю заявку...",
-        success: "Заявка отправлена. Я свяжусь с вами.",
-        telegramFallback: "Открыл Telegram с готовым текстом заявки.",
-        error: "Не удалось отправить автоматически. Напишите мне в Telegram, текст заявки уже подготовлен.",
-        messageTitle: "Новая заявка с сайта VANTRUFREE",
-        messageName: "Имя",
-        messageContact: "Контакт",
-        messageTask: "Задача",
-        messageDetails: "Описание"
       },
       footer: {
         line: "Визуал на основе ИИ, премиальные веб-интерфейсы и авторская атмосфера бренда."
@@ -869,7 +840,7 @@ export const translations = {
         eyebrow: "Quick Route",
         title: "If time is limited, start with the essentials.",
         text:
-          "Move through the core parts quickly: approach, visual language, projects and request. Each card opens a specific section.",
+          "Move through the core parts quickly: approach, visual language, projects and direct contact. Each card opens a specific section.",
         itemCta: "Open",
         itemOneIndex: "01",
         itemOneTitle: "Understand the approach",
@@ -881,8 +852,8 @@ export const translations = {
         itemThreeTitle: "Review projects",
         itemThreeText: "Tracker, warehouse systems and web versions of spreadsheets.",
         itemFourIndex: "04",
-        itemFourTitle: "Send a request",
-        itemFourText: "Jump straight to the form if the task is already clear."
+        itemFourTitle: "Contact Directly",
+        itemFourText: "Telegram, Instagram and email without forms or data collection."
       },
       automation: {
         eyebrow: "Business Automation",
@@ -898,7 +869,7 @@ export const translations = {
         noteEyebrow: "A base for different businesses",
         noteTitle:
           "The same skeleton can be adapted to sales, service, education, clubs, channels, requests, warehouses, content processes or internal operations.",
-        cta: "Send a system request"
+        cta: "Discuss the System Directly"
       },
       business: {
         eyebrow: "What I Do",
@@ -1046,35 +1017,6 @@ export const translations = {
           "Best fit for restaurants, brands, music artists, founders and teams that need a stronger visual identity, a more intentional portfolio, a premium landing page or a custom web layer over messy operational data.",
         primaryCta: "Message on Telegram",
         secondaryCta: "Review Video Works"
-      },
-      lead: {
-        formAria: "Project request form",
-        eyebrow: "Request",
-        title: "Briefly describe the task and I will return with an initial breakdown.",
-        nameLabel: "Name",
-        namePlaceholder: "How should I address you",
-        contactLabel: "Telegram or phone",
-        contactPlaceholder: "@username or number",
-        taskLabel: "What do you need",
-        taskPlaceholder: "Choose a direction",
-        taskAutomation: "Automation / bot / requests",
-        taskWeb: "Website / web interface / sheets",
-        taskVisual: "Visuals / video / content",
-        taskAudit: "Idea or process review",
-        messageLabel: "Briefly about the task",
-        messagePlaceholder: "What exists now and what needs automation or improvement",
-        submit: "Send request",
-        hint:
-          "The form sends requests directly to Telegram. If the server is temporarily unavailable, it opens a prepared message for manual sending.",
-        sending: "Sending request...",
-        success: "Request sent. I will contact you.",
-        telegramFallback: "Telegram opened with the prepared request text.",
-        error: "Automatic delivery failed. Message me on Telegram; the request text is already prepared.",
-        messageTitle: "New request from VANTRUFREE website",
-        messageName: "Name",
-        messageContact: "Contact",
-        messageTask: "Task",
-        messageDetails: "Details"
       },
       footer: {
         line: "AI visuals, premium web interfaces and curated brand atmospheres."

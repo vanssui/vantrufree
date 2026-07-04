@@ -18,9 +18,9 @@
     <meta name="apple-mobile-web-app-title" content="VANTRUFREE" />
     <meta name="application-name" content="VANTRUFREE" />
     <meta name="theme-color" content="#090909" />
-    <link rel="stylesheet" href="./styles/base.css?v=14" />
-    <link rel="stylesheet" href="./styles/layout.css?v=14" />
-    <link rel="stylesheet" href="./styles/sections.css?v=14" />
+    <link rel="stylesheet" href="./styles/base.css?v=15" />
+    <link rel="stylesheet" href="./styles/layout.css?v=15" />
+    <link rel="stylesheet" href="./styles/sections.css?v=15" />
   </head>
   <body class="is-preloading" data-scene="hero" data-read-mode="full" data-site-view="start">
     <div class="site-preloader" data-preloader aria-hidden="true">
@@ -174,10 +174,10 @@
             <p data-i18n="route.itemThreeText">Трекер, складские системы и веб-версии таблиц.</p>
             <em data-i18n="route.itemCta">Перейти</em>
           </a>
-          <a class="site-route__card site-route__card--action glass3d reveal reveal-delay" href="#lead" data-site-view="portfolio">
+          <a class="site-route__card site-route__card--action glass3d reveal reveal-delay" href="#contact" data-site-view="portfolio">
             <span data-i18n="route.itemFourIndex">04</span>
-            <strong data-i18n="route.itemFourTitle">Оставить заявку</strong>
-            <p data-i18n="route.itemFourText">Сразу перейти к форме, если уже понятно, что нужно обсудить.</p>
+            <strong data-i18n="route.itemFourTitle">Связаться напрямую</strong>
+            <p data-i18n="route.itemFourText">Telegram, Instagram и почта без формы и сбора данных.</p>
             <em data-i18n="route.itemCta">Перейти</em>
           </a>
         </div>
@@ -224,7 +224,7 @@
             <p class="eyebrow" data-i18n="automation.noteEyebrow">Для малого, среднего и крупного бизнеса</p>
             <h3 data-i18n="automation.noteTitle">Такую логику можно адаптировать под продажи, обучение, клубы, сервисы, заявки, склады и внутренние процессы.</h3>
           </div>
-          <a class="button button--primary" href="#lead" data-site-view="automation" data-i18n="automation.cta">Оставить заявку на систему</a>
+          <a class="button button--primary" href="#contact" data-site-view="automation" data-i18n="automation.cta">Обсудить систему напрямую</a>
         </div>
       </section>
 
@@ -573,7 +573,7 @@
       </section>
 
       <section class="contact shell section-observe" id="contact" data-scene="contact">
-        <div class="contact__grid">
+        <div class="contact__grid contact__grid--single">
           <div class="contact-card glass3d reveal">
             <p class="eyebrow" data-i18n="contact.eyebrow">Контакт</p>
             <h2 data-i18n="contact.title">Давай соберем визуальную систему, у которой действительно есть голос.</h2>
@@ -586,42 +586,6 @@
               <a class="button button--ghost" href="#video" data-i18n="contact.secondaryCta">Посмотреть видео-работы</a>
             </div>
           </div>
-
-          <form class="lead-form glass3d reveal reveal-delay" id="lead" data-lead-form data-lead-endpoint="https://nolclub.ru/api/vantrufree/leads" aria-label="Заявка на проект" data-i18n-aria-label="lead.formAria">
-            <p class="eyebrow" data-i18n="lead.eyebrow">Заявка</p>
-            <h2 data-i18n="lead.title">Коротко опишите задачу, и я вернусь с первым разбором.</h2>
-
-            <label class="lead-field">
-              <span data-i18n="lead.nameLabel">Имя</span>
-              <input name="name" type="text" autocomplete="name" required placeholder="Как к вам обращаться" data-i18n-placeholder="lead.namePlaceholder" />
-            </label>
-
-            <label class="lead-field">
-              <span data-i18n="lead.contactLabel">Telegram или телефон</span>
-              <input name="contact" type="text" autocomplete="tel" required placeholder="@username или номер" data-i18n-placeholder="lead.contactPlaceholder" />
-            </label>
-
-            <label class="lead-field">
-              <span data-i18n="lead.taskLabel">Что нужно</span>
-              <select name="task" required>
-                <option value="" data-i18n="lead.taskPlaceholder">Выберите направление</option>
-                <option value="automation" data-i18n="lead.taskAutomation">Автоматизация / бот / заявки</option>
-                <option value="web" data-i18n="lead.taskWeb">Сайт / веб-интерфейс / таблицы</option>
-                <option value="visual" data-i18n="lead.taskVisual">Визуал / видео / контент</option>
-                <option value="audit" data-i18n="lead.taskAudit">Разбор идеи или процесса</option>
-              </select>
-            </label>
-
-            <label class="lead-field">
-              <span data-i18n="lead.messageLabel">Коротко о задаче</span>
-              <textarea name="message" rows="5" required placeholder="Что есть сейчас, что нужно автоматизировать или улучшить" data-i18n-placeholder="lead.messagePlaceholder"></textarea>
-            </label>
-
-            <button class="button button--primary lead-form__submit" type="submit" data-i18n="lead.submit">Отправить заявку</button>
-            <p class="lead-form__status" data-lead-status data-i18n="lead.hint">
-              Форма отправляет заявку напрямую в Telegram. Если сервер временно недоступен, откроется готовое сообщение для ручной отправки.
-            </p>
-          </form>
         </div>
       </section>
     </main>
@@ -726,6 +690,6 @@
       </div>
     </dialog>
 
-    <script type="module" src="./scripts/main.js?v=14"></script>
+    <script type="module" src="./scripts/main.js?v=15"></script>
   </body>
 </html>

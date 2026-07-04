@@ -47,7 +47,7 @@ const setSiteView = (view) => {
 const getViewForHash = (hash) => {
   if (hash === "#automation") return "automation";
   if (hash === "#start" || !hash) return "start";
-  if (hash === "#lead" || hash === "#contact") {
+  if (hash === "#contact") {
     return currentSiteView === "automation" ? "automation" : "portfolio";
   }
   return "portfolio";
@@ -520,104 +520,8 @@ const setLanguage = (language) => {
   updateReadModeButtons();
 };
 
-const buildLeadMessage = (payload) => {
-  const lead = currentBundle().ui.lead;
-  return [
-    lead.messageTitle,
-    `${lead.messageName}: ${payload.name}`,
-    `${lead.messageContact}: ${payload.contact}`,
-    `${lead.messageTask}: ${payload.taskLabel}`,
-    `${lead.messageDetails}: ${payload.message}`
-  ].join("\n");
-};
-
-const bindLeadForm = () => {
-  const form = document.querySelector("[data-lead-form]");
-  if (!form) return;
-
-  const status = form.querySelector("[data-lead-status]");
-  const submitButton = form.querySelector("[type='submit']");
-
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    const lead = currentBundle().ui.lead;
-    const formData = new FormData(form);
-    const taskSelect = form.elements.task;
-    const selectedTask = taskSelect?.selectedOptions?.[0]?.textContent?.trim() || "";
-    const payload = {
-      name: String(formData.get("name") || "").trim(),
-      contact: String(formData.get("contact") || "").trim(),
-      task: String(formData.get("task") || "").trim(),
-      taskLabel: selectedTask,
-      message: String(formData.get("message") || "").trim(),
-      language: currentLanguage,
-      page: window.location.href,
-      source: "VANTRUFREE portfolio",
-      createdAt: new Date().toISOString()
-    };
-
-    if (!payload.name || !payload.contact || !payload.task || !payload.message) {
-      form.reportValidity();
-      return;
-    }
-
-    const endpoint = form.dataset.leadEndpoint?.trim();
-    const message = buildLeadMessage(payload);
-
-    if (status) {
-      status.textContent = lead.sending;
-      status.dataset.state = "pending";
-    }
-    if (submitButton) {
-      submitButton.disabled = true;
-    }
-
-    try {
-      if (endpoint) {
-        const response = await fetch(endpoint, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ ...payload, messageText: message })
-        });
-
-        if (!response.ok) {
-          throw new Error(`Lead endpoint failed with ${response.status}`);
-        }
-
-        if (status) {
-          status.textContent = lead.success;
-          status.dataset.state = "success";
-        }
-      } else {
-        openExternalLink(`${telegramRequestUrl}?text=${encodeURIComponent(message)}`);
-        if (status) {
-          status.textContent = lead.telegramFallback;
-          status.dataset.state = "success";
-        }
-      }
-
-      form.reset();
-    } catch (error) {
-      console.error(error);
-      openExternalLink(`${telegramRequestUrl}?text=${encodeURIComponent(message)}`);
-      if (status) {
-        status.textContent = lead.error;
-        status.dataset.state = "error";
-      }
-    } finally {
-      if (submitButton) {
-        submitButton.disabled = false;
-      }
-    }
-  });
-};
-
 setLanguage(currentLanguage);
 setReadMode(currentReadMode);
-bindLeadForm();
 
 const sections = document.querySelectorAll(".section-observe");
 const sceneObserver = new IntersectionObserver(

@@ -74,18 +74,21 @@ VANTRUFREE-portfolio/
 - `highlights` — ключевые возможности
 - `accent` — `gold`, `amber` или `ice`
 
-### 5. Подключить отправку заявок (Telegram)
+### 5. Отправка заявок
 
-Форма уже настроена на `data-lead-endpoint="/api/leads"`.
+Форма заявки отключена: сайт больше не собирает данные и не отправляет их в Telegram автоматически.
+В контактах оставлены только прямые ссылки на Telegram, Instagram и почту.
 
-Добавлен backend:
+Старые backend-заготовки сохранены в проекте как архивная опция, если позже нужно будет вернуть серверную отправку:
 
-- `backend/server.mjs` — принимает `POST /api/leads`, валидирует поля и отправляет заявку в Telegram Bot API.
-- `api/leads.php` — PHP-вариант для Beget/shared hosting без Node.js и systemd.
-- `api/config.local.example.php` — шаблон закрытого PHP-конфига для хостинга без SSH и переменных окружения.
+- `backend/server.mjs` — Node.js-вариант для `POST /api/leads`.
+- `api/leads.php` — PHP-вариант для Beget/shared hosting.
+- `api/config.local.example.php` — шаблон закрытого PHP-конфига.
 - `backend/.env.example` — шаблон переменных окружения.
 
-Быстрый запуск:
+Если отправку заявок нужно вернуть, сначала нужно заново добавить форму на страницу и явно указать endpoint.
+
+Быстрый запуск старого backend-варианта:
 
 ```bash
 cd backend
